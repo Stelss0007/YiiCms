@@ -30,7 +30,7 @@ $config = [
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
-            'errorAction' => 'site/error',
+            'errorAction' => 'main/main/error',
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
@@ -69,6 +69,10 @@ $config = [
     //Обработка модулей перенесена в CmsKernelComponent,
     // для того чтобы можно было динамично управлять модулями
     'modules' => [
+        'main' => [
+            'class' => 'app\modules\main\Module',
+            // ... другие настройки модуля ...
+        ],
 //        'theme' => [
 //            'class' => app\modules\theme\Module::class,
 //        ],
