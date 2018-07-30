@@ -1,286 +1,689 @@
-
-<div class="quick-actions_homepage">
-  <ul class="quick-actions">
-    <li class="bg_lb"> <a href="index.html"> <i class="icon-dashboard"></i> <span class="label label-important">20</span> My Dashboard </a> </li>
-    <li class="bg_lg span3"> <a href="charts.html"> <i class="icon-signal"></i> Charts</a> </li>
-    <li class="bg_ly"> <a href="widgets.html"> <i class="icon-inbox"></i><span class="label label-success">101</span> Widgets </a> </li>
-    <li class="bg_lo"> <a href="tables.html"> <i class="icon-th"></i> Tables</a> </li>
-    <li class="bg_ls"> <a href="grid.html"> <i class="icon-fullscreen"></i> Full width</a> </li>
-    <li class="bg_lo span3"> <a href="form-common.html"> <i class="icon-th-list"></i> Forms</a> </li>
-    <li class="bg_ls"> <a href="buttons.html"> <i class="icon-tint"></i> Buttons</a> </li>
-    <li class="bg_lb"> <a href="interface.html"> <i class="icon-pencil"></i>Elements</a> </li>
-    <li class="bg_lg"> <a href="calendar.html"> <i class="icon-calendar"></i> Calendar</a> </li>
-    <li class="bg_lr"> <a href="error404.html"> <i class="icon-info-sign"></i> Error</a> </li>
-
-  </ul>
+<!-- top tiles -->
+<div class="row tile_count">
+    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+        <span class="count_top"><i class="fa fa-user"></i> Total Users</span>
+        <div class="count">2500</div>
+        <span class="count_bottom"><i class="green">4% </i> From last Week</span>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+        <span class="count_top"><i class="fa fa-clock-o"></i> Average Time</span>
+        <div class="count">123.50</div>
+        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> From last Week</span>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+        <span class="count_top"><i class="fa fa-user"></i> Total Males</span>
+        <div class="count green">2,500</div>
+        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+        <span class="count_top"><i class="fa fa-user"></i> Total Females</span>
+        <div class="count">4,567</div>
+        <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i> From last Week</span>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+        <span class="count_top"><i class="fa fa-user"></i> Total Collections</span>
+        <div class="count">2,315</div>
+        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+    </div>
+    <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+        <span class="count_top"><i class="fa fa-user"></i> Total Connections</span>
+        <div class="count">7,325</div>
+        <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> From last Week</span>
+    </div>
 </div>
-<!--End-Action boxes-->
+<!-- /top tiles -->
 
-<!--Chart-box-->
-<div class="row-fluid">
-  <div class="widget-box">
-    <div class="widget-title bg_lg"><span class="icon"><i class="icon-signal"></i></span>
-      <h5>Site Analytics</h5>
-    </div>
-    <div class="widget-content" >
-      <div class="row-fluid">
-        <div class="span9">
-          <div class="chart"></div>
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="dashboard_graph">
+
+            <div class="row x_title">
+                <div class="col-md-6">
+                    <h3>Network Activities <small>Graph title sub-title</small></h3>
+                </div>
+                <div class="col-md-6">
+                    <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                        <span>December 30, 2014 - January 28, 2015</span> <b class="caret"></b>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9 col-sm-9 col-xs-12">
+                <div id="chart_plot_01" class="demo-placeholder"></div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12 bg-white">
+                <div class="x_title">
+                    <h2>Top Campaign Performance</h2>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-6">
+                    <div>
+                        <p>Facebook Campaign</p>
+                        <div class="">
+                            <div class="progress progress_sm" style="width: 76%;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="80"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Twitter Campaign</p>
+                        <div class="">
+                            <div class="progress progress_sm" style="width: 76%;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="60"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-6">
+                    <div>
+                        <p>Conventional Media</p>
+                        <div class="">
+                            <div class="progress progress_sm" style="width: 76%;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="40"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Bill boards</p>
+                        <div class="">
+                            <div class="progress progress_sm" style="width: 76%;">
+                                <div class="progress-bar bg-green" role="progressbar" data-transitiongoal="50"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="clearfix"></div>
         </div>
-        <div class="span3">
-          <ul class="site-stats">
-            <li class="bg_lh"><i class="icon-user"></i> <strong>2540</strong> <small>Total Users</small></li>
-            <li class="bg_lh"><i class="icon-plus"></i> <strong>120</strong> <small>New Users </small></li>
-            <li class="bg_lh"><i class="icon-shopping-cart"></i> <strong>656</strong> <small>Total Shop</small></li>
-            <li class="bg_lh"><i class="icon-tag"></i> <strong>9540</strong> <small>Total Orders</small></li>
-            <li class="bg_lh"><i class="icon-repeat"></i> <strong>10</strong> <small>Pending Orders</small></li>
-            <li class="bg_lh"><i class="icon-globe"></i> <strong>8540</strong> <small>Online Orders</small></li>
-          </ul>
-        </div>
-      </div>
     </div>
-  </div>
+
 </div>
-<!--End-Chart-box-->
-<hr/>
-<div class="row-fluid">
-  <div class="span6">
-    <div class="widget-box">
-      <div class="widget-title bg_ly" data-toggle="collapse" href="#collapseG2"><span class="icon"><i class="icon-chevron-down"></i></span>
-        <h5>Latest Posts</h5>
-      </div>
-      <div class="widget-content nopadding collapse in" id="collapseG2">
-        <ul class="recent-posts">
-          <li>
-            <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av1.jpg"> </div>
-            <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
-              <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
+<br />
+
+<div class="row">
+
+
+    <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="x_panel tile fixed_height_320">
+            <div class="x_title">
+                <h2>App Versions</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Settings 1</a>
+                            </li>
+                            <li><a href="#">Settings 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
             </div>
-          </li>
-          <li>
-            <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av2.jpg"> </div>
-            <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
-              <p><a href="#">This is a much longer one that will go on for a few lines.It has multiple paragraphs and is full of waffle to pad out the comment.</a> </p>
+            <div class="x_content">
+                <h4>App Usage across versions</h4>
+                <div class="widget_summary">
+                    <div class="w_left w_25">
+                        <span>0.1.5.2</span>
+                    </div>
+                    <div class="w_center w_55">
+                        <div class="progress">
+                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 66%;">
+                                <span class="sr-only">60% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w_right w_20">
+                        <span>123k</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="widget_summary">
+                    <div class="w_left w_25">
+                        <span>0.1.5.3</span>
+                    </div>
+                    <div class="w_center w_55">
+                        <div class="progress">
+                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 45%;">
+                                <span class="sr-only">60% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w_right w_20">
+                        <span>53k</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="widget_summary">
+                    <div class="w_left w_25">
+                        <span>0.1.5.4</span>
+                    </div>
+                    <div class="w_center w_55">
+                        <div class="progress">
+                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+                                <span class="sr-only">60% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w_right w_20">
+                        <span>23k</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="widget_summary">
+                    <div class="w_left w_25">
+                        <span>0.1.5.5</span>
+                    </div>
+                    <div class="w_center w_55">
+                        <div class="progress">
+                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 5%;">
+                                <span class="sr-only">60% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w_right w_20">
+                        <span>3k</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="widget_summary">
+                    <div class="w_left w_25">
+                        <span>0.1.5.6</span>
+                    </div>
+                    <div class="w_center w_55">
+                        <div class="progress">
+                            <div class="progress-bar bg-green" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
+                                <span class="sr-only">60% Complete</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w_right w_20">
+                        <span>1k</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
             </div>
-          </li>
-          <li>
-            <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av4.jpg"> </div>
-            <div class="article-post"> <span class="user-info"> By: john Deo / Date: 2 Aug 2012 / Time:09:27 AM </span>
-              <p><a href="#">This is a much longer one that will go on for a few lines.Itaffle to pad out the comment.</a> </p>
-            </div>
-          <li>
-            <button class="btn btn-warning btn-mini">View All</button>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="widget-box">
-      <div class="widget-title"> <span class="icon"><i class="icon-ok"></i></span>
-        <h5>To Do list</h5>
-      </div>
-      <div class="widget-content">
-        <div class="todo">
-          <ul>
-            <li class="clearfix">
-              <div class="txt"> Luanch This theme on Themeforest <span class="by label">Alex</span></div>
-              <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
-            </li>
-            <li class="clearfix">
-              <div class="txt"> Manage Pending Orders <span class="date badge badge-warning">Today</span> </div>
-              <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
-            </li>
-            <li class="clearfix">
-              <div class="txt"> MAke your desk clean <span class="by label">Admin</span></div>
-              <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
-            </li>
-            <li class="clearfix">
-              <div class="txt"> Today we celebrate the theme <span class="date badge badge-info">08.03.2013</span> </div>
-              <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
-            </li>
-            <li class="clearfix">
-              <div class="txt"> Manage all the orders <span class="date badge badge-important">12.03.2013</span> </div>
-              <div class="pull-right"> <a class="tip" href="#" title="Edit Task"><i class="icon-pencil"></i></a> <a class="tip" href="#" title="Delete"><i class="icon-remove"></i></a> </div>
-            </li>
-          </ul>
         </div>
-      </div>
-    </div>
-    <div class="widget-box">
-      <div class="widget-title"> <span class="icon"><i class="icon-ok"></i></span>
-        <h5>Progress Box</h5>
-      </div>
-      <div class="widget-content">
-        <ul class="unstyled">
-          <li> <span class="icon24 icomoon-icon-arrow-up-2 green"></span> 81% Clicks <span class="pull-right strong">567</span>
-            <div class="progress progress-striped ">
-              <div style="width: 81%;" class="bar"></div>
-            </div>
-          </li>
-          <li> <span class="icon24 icomoon-icon-arrow-up-2 green"></span> 72% Uniquie Clicks <span class="pull-right strong">507</span>
-            <div class="progress progress-success progress-striped ">
-              <div style="width: 72%;" class="bar"></div>
-            </div>
-          </li>
-          <li> <span class="icon24 icomoon-icon-arrow-down-2 red"></span> 53% Impressions <span class="pull-right strong">457</span>
-            <div class="progress progress-warning progress-striped ">
-              <div style="width: 53%;" class="bar"></div>
-            </div>
-          </li>
-          <li> <span class="icon24 icomoon-icon-arrow-up-2 green"></span> 3% Online Users <span class="pull-right strong">8</span>
-            <div class="progress progress-danger progress-striped ">
-              <div style="width: 3%;" class="bar"></div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="widget-box">
-      <div class="widget-title bg_lo"  data-toggle="collapse" href="#collapseG3" > <span class="icon"> <i class="icon-chevron-down"></i> </span>
-        <h5>News updates</h5>
-      </div>
-      <div class="widget-content nopadding updates collapse in" id="collapseG3">
-        <div class="new-update clearfix"><i class="icon-ok-sign"></i>
-          <div class="update-done"><a title="" href="#"><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></a> <span>dolor sit amet, consectetur adipiscing eli</span> </div>
-          <div class="update-date"><span class="update-day">20</span>jan</div>
-        </div>
-        <div class="new-update clearfix"> <i class="icon-gift"></i> <span class="update-notice"> <a title="" href="#"><strong>Congratulation Maruti, Happy Birthday </strong></a> <span>many many happy returns of the day</span> </span> <span class="update-date"><span class="update-day">11</span>jan</span> </div>
-        <div class="new-update clearfix"> <i class="icon-move"></i> <span class="update-alert"> <a title="" href="#"><strong>Maruti is a Responsive Admin theme</strong></a> <span>But already everything was solved. It will ...</span> </span> <span class="update-date"><span class="update-day">07</span>Jan</span> </div>
-        <div class="new-update clearfix"> <i class="icon-leaf"></i> <span class="update-done"> <a title="" href="#"><strong>Envato approved Maruti Admin template</strong></a> <span>i am very happy to approved by TF</span> </span> <span class="update-date"><span class="update-day">05</span>jan</span> </div>
-        <div class="new-update clearfix"> <i class="icon-question-sign"></i> <span class="update-notice"> <a title="" href="#"><strong>I am alwayse here if you have any question</strong></a> <span>we glad that you choose our template</span> </span> <span class="update-date"><span class="update-day">01</span>jan</span> </div>
-      </div>
     </div>
 
-  </div>
-  <div class="span6">
-    <div class="widget-box widget-chat">
-      <div class="widget-title bg_lb"> <span class="icon"> <i class="icon-comment"></i> </span>
-        <h5>Chat Option</h5>
-      </div>
-      <div class="widget-content nopadding collapse in" id="collapseG4">
-        <div class="chat-users panel-right2">
-          <div class="panel-title">
-            <h5>Online Users</h5>
-          </div>
-          <div class="panel-content nopadding">
-            <ul class="contact-list">
-              <li id="user-Alex" class="online"><a href=""><img alt="" src="img/demo/av1.jpg" /> <span>Alex</span></a></li>
-              <li id="user-Linda"><a href=""><img alt="" src="img/demo/av2.jpg" /> <span>Linda</span></a></li>
-              <li id="user-John" class="online new"><a href=""><img alt="" src="img/demo/av3.jpg" /> <span>John</span></a><span class="msg-count badge badge-info">3</span></li>
-              <li id="user-Mark" class="online"><a href=""><img alt="" src="img/demo/av4.jpg" /> <span>Mark</span></a></li>
-              <li id="user-Maxi" class="online"><a href=""><img alt="" src="img/demo/av5.jpg" /> <span>Maxi</span></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="chat-content panel-left2">
-          <div class="chat-messages" id="chat-messages">
-            <div id="chat-messages-inner"></div>
-          </div>
-          <div class="chat-message well">
-            <button class="btn btn-success">Send</button>
-            <span class="input-box">
-            <input type="text" name="msg-box" id="msg-box" />
-            </span> </div>
-        </div>
-      </div>
-    </div>
-    <div class="widget-box">
-      <div class="widget-title"><span class="icon"><i class="icon-user"></i></span>
-        <h5>Our Partner (Box with Fix height)</h5>
-      </div>
-      <div class="widget-content nopadding fix_hgt">
-        <ul class="recent-posts">
-          <li>
-            <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av1.jpg"> </div>
-            <div class="article-post"> <span class="user-info">John Deo</span>
-              <p>Web Desginer &amp; creative Front end developer</p>
+    <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="x_panel tile fixed_height_320 overflow_hidden">
+            <div class="x_title">
+                <h2>Device Usage</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Settings 1</a>
+                            </li>
+                            <li><a href="#">Settings 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
             </div>
-          </li>
-          <li>
-            <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av2.jpg"> </div>
-            <div class="article-post"> <span class="user-info">John Deo</span>
-              <p>Web Desginer &amp; creative Front end developer</p>
+            <div class="x_content">
+                <table class="" style="width:100%">
+                    <tr>
+                        <th style="width:37%;">
+                            <p>Top 5</p>
+                        </th>
+                        <th>
+                            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                                <p class="">Device</p>
+                            </div>
+                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                                <p class="">Progress</p>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <canvas class="canvasDoughnut" height="140" width="140" style="margin: 15px 10px 10px 0"></canvas>
+                        </td>
+                        <td>
+                            <table class="tile_info">
+                                <tr>
+                                    <td>
+                                        <p><i class="fa fa-square blue"></i>IOS </p>
+                                    </td>
+                                    <td>30%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><i class="fa fa-square green"></i>Android </p>
+                                    </td>
+                                    <td>10%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><i class="fa fa-square purple"></i>Blackberry </p>
+                                    </td>
+                                    <td>20%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><i class="fa fa-square aero"></i>Symbian </p>
+                                    </td>
+                                    <td>15%</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p><i class="fa fa-square red"></i>Others </p>
+                                    </td>
+                                    <td>30%</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
             </div>
-          </li>
-          <li>
-            <div class="user-thumb"> <img width="40" height="40" alt="User" src="img/demo/av4.jpg"> </div>
-            <div class="article-post"> <span class="user-info">John Deo</span>
-              <p>Web Desginer &amp; creative Front end developer</p>
+        </div>
+    </div>
+
+
+    <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="x_panel tile fixed_height_320">
+            <div class="x_title">
+                <h2>Quick Settings</h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Settings 1</a>
+                            </li>
+                            <li><a href="#">Settings 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
             </div>
-        </ul>
-      </div>
+            <div class="x_content">
+                <div class="dashboard-widget-content">
+                    <ul class="quick-list">
+                        <li><i class="fa fa-calendar-o"></i><a href="#">Settings</a>
+                        </li>
+                        <li><i class="fa fa-bars"></i><a href="#">Subscription</a>
+                        </li>
+                        <li><i class="fa fa-bar-chart"></i><a href="#">Auto Renewal</a> </li>
+                        <li><i class="fa fa-line-chart"></i><a href="#">Achievements</a>
+                        </li>
+                        <li><i class="fa fa-bar-chart"></i><a href="#">Auto Renewal</a> </li>
+                        <li><i class="fa fa-line-chart"></i><a href="#">Achievements</a>
+                        </li>
+                        <li><i class="fa fa-area-chart"></i><a href="#">Logout</a>
+                        </li>
+                    </ul>
+
+                    <div class="sidebar-widget">
+                        <h4>Profile Completion</h4>
+                        <canvas width="150" height="80" id="chart_gauge_01" class="" style="width: 160px; height: 100px;"></canvas>
+                        <div class="goal-wrapper">
+                            <span id="gauge-text" class="gauge-value pull-left">0</span>
+                            <span class="gauge-value pull-left">%</span>
+                            <span id="goal-text" class="goal-value pull-right">100%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="accordion" id="collapse-group">
-      <div class="accordion-group widget-box">
-        <div class="accordion-heading">
-          <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGOne" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
-            <h5>Accordion Example 1</h5>
-            </a> </div>
-        </div>
-        <div class="collapse in accordion-body" id="collapseGOne">
-          <div class="widget-content"> It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end. </div>
-        </div>
-      </div>
-      <div class="accordion-group widget-box">
-        <div class="accordion-heading">
-          <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGTwo" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
-            <h5>Accordion Example 2</h5>
-            </a> </div>
-        </div>
-        <div class="collapse accordion-body" id="collapseGTwo">
-          <div class="widget-content">And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.</div>
-        </div>
-      </div>
-      <div class="accordion-group widget-box">
-        <div class="accordion-heading">
-          <div class="widget-title"> <a data-parent="#collapse-group" href="#collapseGThree" data-toggle="collapse"> <span class="icon"><i class="icon-magnet"></i></span>
-            <h5>Accordion Example 3</h5>
-            </a> </div>
-        </div>
-        <div class="collapse accordion-body" id="collapseGThree">
-          <div class="widget-content"> Waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just </div>
-        </div>
-      </div>
-    </div>
-    <div class="widget-box collapsible">
-      <div class="widget-title"> <a data-toggle="collapse" href="#collapseOne"> <span class="icon"><i class="icon-arrow-right"></i></span>
-        <h5>Toggle, Open by default, </h5>
-        </a> </div>
-      <div id="collapseOne" class="collapse in">
-        <div class="widget-content"> This box is opened by default, paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end. </div>
-      </div>
-      <div class="widget-title"> <a data-toggle="collapse" href="#collapseTwo"> <span class="icon"><i class="icon-remove"></i></span>
-        <h5>Toggle, closed by default</h5>
-        </a> </div>
-      <div id="collapseTwo" class="collapse">
-        <div class="widget-content"> This box is now open </div>
-      </div>
-      <div class="widget-title"> <a data-toggle="collapse" href="#collapseThree"> <span class="icon"><i class="icon-remove"></i></span>
-        <h5>Toggle, closed by default</h5>
-        </a> </div>
-      <div id="collapseThree" class="collapse">
-        <div class="widget-content"> This box is now open </div>
-      </div>
-    </div>
-    <div class="widget-box">
-      <div class="widget-title">
-        <ul class="nav nav-tabs">
-          <li class="active"><a data-toggle="tab" href="#tab1">Tab1</a></li>
-          <li><a data-toggle="tab" href="#tab2">Tab2</a></li>
-          <li><a data-toggle="tab" href="#tab3">Tab3</a></li>
-        </ul>
-      </div>
-      <div class="widget-content tab-content">
-        <div id="tab1" class="tab-pane active">
-          <p>And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment.</p>
-          <img src="img/demo/demo-image1.jpg" alt="demo-image"/></div>
-        <div id="tab2" class="tab-pane"> <img src="img/demo/demo-image2.jpg" alt="demo-image"/>
-          <p>And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment.</p>
-        </div>
-        <div id="tab3" class="tab-pane">
-          <p>And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment. </p>
-          <img src="img/demo/demo-image3.jpg" alt="demo-image"/></div>
-      </div>
-    </div>
-  </div>
+
 </div>
 
+
+<div class="row">
+    <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Recent Activities <small>Sessions</small></h2>
+                <ul class="nav navbar-right panel_toolbox">
+                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Settings 1</a>
+                            </li>
+                            <li><a href="#">Settings 2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                    </li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="dashboard-widget-content">
+
+                    <ul class="list-unstyled timeline widget">
+                        <li>
+                            <div class="block">
+                                <div class="block_content">
+                                    <h2 class="title">
+                                        <a>Who Needs Sundance When You’ve Got&nbsp;Crowdfunding?</a>
+                                    </h2>
+                                    <div class="byline">
+                                        <span>13 hours ago</span> by <a>Jane Smith</a>
+                                    </div>
+                                    <p class="excerpt">Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that could fund your project, and if the buyers liked your flick, they’d pay to Fast-forward and… <a>Read&nbsp;More</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="block">
+                                <div class="block_content">
+                                    <h2 class="title">
+                                        <a>Who Needs Sundance When You’ve Got&nbsp;Crowdfunding?</a>
+                                    </h2>
+                                    <div class="byline">
+                                        <span>13 hours ago</span> by <a>Jane Smith</a>
+                                    </div>
+                                    <p class="excerpt">Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that could fund your project, and if the buyers liked your flick, they’d pay to Fast-forward and… <a>Read&nbsp;More</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="block">
+                                <div class="block_content">
+                                    <h2 class="title">
+                                        <a>Who Needs Sundance When You’ve Got&nbsp;Crowdfunding?</a>
+                                    </h2>
+                                    <div class="byline">
+                                        <span>13 hours ago</span> by <a>Jane Smith</a>
+                                    </div>
+                                    <p class="excerpt">Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that could fund your project, and if the buyers liked your flick, they’d pay to Fast-forward and… <a>Read&nbsp;More</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="block">
+                                <div class="block_content">
+                                    <h2 class="title">
+                                        <a>Who Needs Sundance When You’ve Got&nbsp;Crowdfunding?</a>
+                                    </h2>
+                                    <div class="byline">
+                                        <span>13 hours ago</span> by <a>Jane Smith</a>
+                                    </div>
+                                    <p class="excerpt">Film festivals used to be do-or-die moments for movie makers. They were where you met the producers that could fund your project, and if the buyers liked your flick, they’d pay to Fast-forward and… <a>Read&nbsp;More</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-8 col-sm-8 col-xs-12">
+
+
+
+        <div class="row">
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Visitors location <small>geo-presentation</small></h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Settings 1</a>
+                                    </li>
+                                    <li><a href="#">Settings 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div class="dashboard-widget-content">
+                            <div class="col-md-4 hidden-small">
+                                <h2 class="line_30">125.7k Views from 60 countries</h2>
+
+                                <table class="countries_list">
+                                    <tbody>
+                                    <tr>
+                                        <td>United States</td>
+                                        <td class="fs15 fw700 text-right">33%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>France</td>
+                                        <td class="fs15 fw700 text-right">27%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Germany</td>
+                                        <td class="fs15 fw700 text-right">16%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Spain</td>
+                                        <td class="fs15 fw700 text-right">11%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Britain</td>
+                                        <td class="fs15 fw700 text-right">10%</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="world-map-gdp" class="col-md-8 col-sm-12 col-xs-12" style="height:230px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+
+
+            <!-- Start to do list -->
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>To Do List <small>Sample tasks</small></h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Settings 1</a>
+                                    </li>
+                                    <li><a href="#">Settings 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+
+                        <div class="">
+                            <ul class="to_do">
+                                <li>
+                                    <p>
+                                        <input type="checkbox" class="flat"> Schedule meeting with new client </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <input type="checkbox" class="flat"> Create email address for new intern</p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <input type="checkbox" class="flat"> Have IT fix the network printer</p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <input type="checkbox" class="flat"> Copy backups to offsite location</p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <input type="checkbox" class="flat"> Food truck fixie locavors mcsweeney</p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <input type="checkbox" class="flat"> Food truck fixie locavors mcsweeney</p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <input type="checkbox" class="flat"> Create email address for new intern</p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <input type="checkbox" class="flat"> Have IT fix the network printer</p>
+                                </li>
+                                <li>
+                                    <p>
+                                        <input type="checkbox" class="flat"> Copy backups to offsite location</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End to do list -->
+
+            <!-- start of weather widget -->
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Daily active users <small>Sessions</small></h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Settings 1</a>
+                                    </li>
+                                    <li><a href="#">Settings 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="temperature"><b>Monday</b>, 07:30 AM
+                                    <span>F</span>
+                                    <span><b>C</b></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="weather-icon">
+                                    <canvas height="84" width="84" id="partly-cloudy-day"></canvas>
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="weather-text">
+                                    <h2>Texas <br><i>Partly Cloudy Day</i></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="weather-text pull-right">
+                                <h3 class="degrees">23</h3>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="row weather-days">
+                            <div class="col-sm-2">
+                                <div class="daily-weather">
+                                    <h2 class="day">Mon</h2>
+                                    <h3 class="degrees">25</h3>
+                                    <canvas id="clear-day" width="32" height="32"></canvas>
+                                    <h5>15 <i>km/h</i></h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="daily-weather">
+                                    <h2 class="day">Tue</h2>
+                                    <h3 class="degrees">25</h3>
+                                    <canvas height="32" width="32" id="rain"></canvas>
+                                    <h5>12 <i>km/h</i></h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="daily-weather">
+                                    <h2 class="day">Wed</h2>
+                                    <h3 class="degrees">27</h3>
+                                    <canvas height="32" width="32" id="snow"></canvas>
+                                    <h5>14 <i>km/h</i></h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="daily-weather">
+                                    <h2 class="day">Thu</h2>
+                                    <h3 class="degrees">28</h3>
+                                    <canvas height="32" width="32" id="sleet"></canvas>
+                                    <h5>15 <i>km/h</i></h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="daily-weather">
+                                    <h2 class="day">Fri</h2>
+                                    <h3 class="degrees">28</h3>
+                                    <canvas height="32" width="32" id="wind"></canvas>
+                                    <h5>11 <i>km/h</i></h5>
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="daily-weather">
+                                    <h2 class="day">Sat</h2>
+                                    <h3 class="degrees">26</h3>
+                                    <canvas height="32" width="32" id="cloudy"></canvas>
+                                    <h5>10 <i>km/h</i></h5>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- end of weather widget -->
+        </div>
+    </div>
+</div>
