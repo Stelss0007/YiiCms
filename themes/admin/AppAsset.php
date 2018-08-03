@@ -2,6 +2,7 @@
 
 namespace app\themes\admin;
 
+use yii\helpers\VarDumper;
 use yii\web\AssetBundle;
 
 class AppAsset extends AssetBundle
@@ -84,5 +85,13 @@ class AppAsset extends AssetBundle
         // Tell AssetBundle where the assets files are
         $this->sourcePath = __DIR__ . "/assets";
         parent::init();
+
+        $this->publishOptions['beforeCopy'] = function ($from, $to) {
+//            VarDumper::dump('from: ' . $from . '    ');
+//            VarDumper::dump($to . PHP_EOL);
+//            $dirname = basename(dirname($from));
+//            return $dirname === 'fonts' || $dirname === 'css';
+            return true;
+        };
     }
 }
