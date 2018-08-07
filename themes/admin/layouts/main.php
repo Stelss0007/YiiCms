@@ -27,6 +27,11 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <style>
+        .right_col {
+            min-height: 95vh;
+        }
+    </style>
 </head>
 <body class="nav-md">
 <?php $this->beginBody() ?>
@@ -183,7 +188,7 @@ AppAsset::register($this);
                             <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                                 <li>
                                     <a>
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="/images/img.jpg" alt="Profile Image" /></span>
                                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -195,7 +200,7 @@ AppAsset::register($this);
                                 </li>
                                 <li>
                                     <a>
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="/images/img.jpg" alt="Profile Image" /></span>
                                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -207,7 +212,7 @@ AppAsset::register($this);
                                 </li>
                                 <li>
                                     <a>
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="/images/img.jpg" alt="Profile Image" /></span>
                                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -219,7 +224,7 @@ AppAsset::register($this);
                                 </li>
                                 <li>
                                     <a>
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="/images/img.jpg" alt="Profile Image" /></span>
                                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
@@ -247,7 +252,15 @@ AppAsset::register($this);
 
         <!-- page content -->
         <div class="right_col" role="main">
-            <?= $content ?>
+            <div class="row">
+                <div class="col-md-12">
+                    <?php if($this->title): ?>
+                        <h1><?= Html::encode($this->title) ?></h1>
+                        <hr>
+                    <?php endif; ?>
+                    <?php echo $content ?>
+                </div>
+            </div>
         </div>
         <!-- /page content -->
 
@@ -261,7 +274,6 @@ AppAsset::register($this);
         <!-- /footer content -->
     </div>
 </div>
-
 
 <?php $this->endBody() ?>
 </body>
