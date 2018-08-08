@@ -9,7 +9,7 @@ use yii\helpers\Html;
 
 $this->title = Module::t('Themes');
 $this->params['breadcrumbs'][] = ['label' => Module::t('Themes'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = Module::t('Create Theme');
 ?>
 <div class="x_panel">
     <div class="x_title">

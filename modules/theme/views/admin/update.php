@@ -8,8 +8,8 @@ use yii\helpers\Html;
 
 $this->title = Module::t('Themes');
 $this->params['breadcrumbs'][] = ['label' => Module::t('Themes'), 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = Module::t('Update');
+$this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
+$this->params['breadcrumbs'][] = \Yii::t('yii', 'Update');
 ?>
 
 <div class="x_panel">

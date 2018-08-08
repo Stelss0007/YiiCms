@@ -253,6 +253,23 @@ AppAsset::register($this);
         <!-- page content -->
         <div class="right_col" role="main">
             <div class="row">
+                <!--breadcrumbs-->
+                <div id="content-header">
+                    <?= Breadcrumbs::widget([
+                        'options' => [
+                            'id' => 'breadcrumb',
+                            'class' => 'breadcrumb',
+                        ],
+                        'homeLink'      =>  [
+                            'label'     =>  Yii::t('yii', 'Home'),
+                            'url'       =>  ['/admin'],
+                            'class'     =>  'home',
+                        ],
+                        'itemTemplate' => "<li>{link}</li>\n",
+                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                    ]) ?>
+                </div>
+                <!--End-breadcrumbs-->
                 <div class="col-md-12">
                     <?php if($this->title): ?>
                         <h1><?= Html::encode($this->title) ?></h1>

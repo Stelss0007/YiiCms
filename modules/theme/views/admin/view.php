@@ -8,8 +8,8 @@ use yii\widgets\DetailView;
 /* @var $model app\modules\theme\models\Theme */
 
 $this->title = Module::t('Themes');
-$this->params['breadcrumbs'][] = ['label' => 'Themes', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => Module::t('Themes'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = $model->name;
 ?>
 
 <div class="x_panel">
