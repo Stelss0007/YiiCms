@@ -18,7 +18,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <div class="x_panel">
         <div class="x_title">
-            <h3>Stripped table <small>Stripped table subtitle</small></h3>
+            <h3>
+                <?php echo Module::t('Themes List');?>
+            </h3>
             <div class="clearfix"></div>
         </div>
         <div class="x_content">
