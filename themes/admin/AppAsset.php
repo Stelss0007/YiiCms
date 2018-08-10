@@ -77,21 +77,20 @@ class AppAsset extends AssetBundle
     ];
 
     public $publishOptions = [
-        'forceCopy' => true,
+        'forceCopy' => YII_ENV_DEV,
     ];
 
     public function init()
     {
+        // НУЖНО ЗАЮЗАТЬ http://php.net/manual/en/function.stat.php для определения хеша директории assets
+
         // Tell AssetBundle where the assets files are
         $this->sourcePath = __DIR__ . "/assets";
         parent::init();
 
         $this->publishOptions['beforeCopy'] = function ($from, $to) {
-//            VarDumper::dump('from: ' . $from . '    ');
-//            VarDumper::dump($to . PHP_EOL);
-//            $dirname = basename(dirname($from));
-//            return $dirname === 'fonts' || $dirname === 'css';
             return true;
+            //return false; //Прод режим, не копировать ассетсы. ускорение в 10-100 раз
         };
     }
 }
