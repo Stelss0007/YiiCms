@@ -47,4 +47,6 @@ phpunit.phar
 /node_modules
 .env
 
+/runtime
+
 /public/assets/*
