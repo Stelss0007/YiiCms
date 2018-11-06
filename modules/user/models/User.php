@@ -32,9 +32,11 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            [['updatedAt', 'createdAt', 'lastLoggedInAt', 'author'], 'integer'],
-            [['name', 'email', ], 'string', 'max' => 100],
-            [['password'], 'string', 'max' => 100],
+            [['updatedAt', 'createdAt', 'lastLoggedInAt', 'createdBy', 'updatedBy'], 'integer'],
+            [['name', 'email', ], 'string', 'max' => 100,],
+            [['password'], 'string', 'max' => 100,],
+            [['name', 'email', 'password'], 'required'],
+            ['email', 'email'],
             [['active'], 'string', 'max' => 4],
             [['accessToken', 'authKey'], 'string', 'max' => 100],
         ];
@@ -49,11 +51,13 @@ class User extends ActiveRecord implements IdentityInterface
             'id' => 'ID',
             'email' => Module::t('Email'),
             'name' => Module::t('Name'),
+            'password' => Module::t('Password'),
             'active' => Module::t('Active'),
-            'createdAt' => Module::t('User Created'),
-            'updatedAt' => Module::t('User Updated'),
+            'createdAt' => \Yii::t('app', 'Created At'),
+            'updatedAt' => \Yii::t('app', 'Updated At'),
             'lastLoggedInAt' => Module::t('Last Logged In At'),
-            'author' => Module::t('Author'),
+            'createdBy' => \Yii::t('app', 'Created By'),
+            'updatedBy' => \Yii::t('app', 'Updated By'),
         ];
     }
 
@@ -92,7 +96,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function getAuthKey()
     {
-        return $this->auth_key;
+        return $this->authKey;
     }
 
     /**
@@ -102,5 +106,28 @@ class User extends ActiveRecord implements IdentityInterface
     public function validateAuthKey($authKey)
     {
         return $this->getAuthKey() === $authKey;
+    }
+
+    public function beforeSave($insert)
+    {
+        $this->updatedAt = time();
+
+        if (parent::beforeSave($insert)) {
+            if ($this->isNewRecord) {
+                $this->createdAt = time();
+                $this->password = \Yii::$app->getSecurity()->generatePasswordHash($this->password);
+                $this->authKey = \Yii::$app->security->generateRandomString();
+
+                return true;
+            }
+
+            if ($this->newPassword) {
+
+                $this->password = \Yii::$app->getSecurity()->generatePasswordHash($this->newPassword);
+            }
+
+            return true;
+
+        }
     }
 }

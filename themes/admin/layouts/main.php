@@ -83,7 +83,7 @@ AppAsset::register($this);
                             'items' => [
                                 ['label' => '<i class="fa fa-home"></i><span>Dashboard</span>', 'url' => ['/admin']],
                                 ['label' => '<i class="fa fa-users"></i><span>Groups</span>', 'url' => ['/admin/groups']],
-                                ['label' => '<i class="fa fa-user"></i><span>Users</span>', 'url' => ['/admin/users']],
+                                ['label' => '<i class="fa fa-user"></i><span>Users</span>', 'url' => ['/admin/user']],
                                 ['label' => '<i class="fa fa-key"></i><span>Permissions</span>', 'url' => ['/admin/permissions']],
                                 ['label' => '<i class="fa fa-list"></i><span>Menu</span>', 'url' => ['/admin/menu']],
                                 ['label' => '<i class="fa fa-database"></i><span>Modules</span>', 'url' => ['/admin/module']],

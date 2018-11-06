@@ -39,9 +39,8 @@ $this->params['breadcrumbs'][] = $this->title;
                     'createdAt:datetime',
                     'updatedAt:datetime',
                     'lastLoggedInAt:datetime',
-                    //'active',
-                    //'updatedAt',
-                    'author',
+                    'createdBy',
+                    'updatedBy',
 
                     ['class' => ActionColumn::class],
                 ],

@@ -1,11 +1,11 @@
 <?php
 
-use app\modules\theme\Module;
+use app\modules\user\Module;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\modules\theme\models\UserSearch */
+/* @var $model app\modules\user\models\UserSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 

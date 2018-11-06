@@ -4,6 +4,9 @@ use yii\db\Migration;
 
 /**
  * Class m180314_153352_install
+ *
+ * yii migrate --migrationPath=@app/modules/user/migrations
+ *
  */
 class m180314_153353_install extends Migration
 {
@@ -15,12 +18,14 @@ class m180314_153353_install extends Migration
             'name' => $this->string(100),
             'password' => $this->string(100)->notNull(),
             'active' => $this->tinyInteger(4),
-            'author' => $this->integer(),
+            'group' => $this->integer(),
             'accessToken' => $this->string(100)->notNull(),
             'authKey' => $this->string(100)->notNull(),
             'lastLoggedInAt' => $this->integer(),
             'createdAt' => $this->integer(),
             'updatedAt' => $this->integer(),
+            'createdBy' => $this->integer(),
+            'updatedBy' => $this->integer(),
         ]);
 
         $this->setDefaults();
@@ -38,9 +43,12 @@ class m180314_153353_install extends Migration
         $this->insert('user', [
             'email' => 'admin@mail.com',
             'name' => 'admin',
-            'password' => '111111',
+            'authKey' => \Yii::$app->security->generateRandomString(),
+            'password' => \Yii::$app->getSecurity()->generatePasswordHash('admin'),
+            'group' => 1,
             'active' => 1,
-            'author' => 0,
+            'createdBy' => 0,
+            'updatedBy' => 0,
             'createdAt' => time(),
             'updatedAt' => time(),
         ]);
