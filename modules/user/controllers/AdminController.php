@@ -2,6 +2,7 @@
 
 namespace app\modules\user\controllers;
 
+use app\modules\user\models\LoginForm;
 use Yii;
 use app\modules\user\models\User;
 use app\modules\user\models\UserSearch;
@@ -123,5 +124,23 @@ class AdminController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    public function actionLogin()
+    {
+        if (!\Yii::$app->user->isGuest)
+            return $this->goHome();
+
+        $model = new LoginForm();
+        if ($model->load(Yii::$app->request->post()) and $model->login())
+            return $this->goBack();
+
+        return $this->render('login', compact('model'));
+    }
+
+    public function actionLogout()
+    {
+        Yii::$app->user->logout();
+        return $this->goHome();
     }
 }

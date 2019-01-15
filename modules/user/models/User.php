@@ -121,13 +121,12 @@ class User extends ActiveRecord implements IdentityInterface
                 return true;
             }
 
-            if ($this->newPassword) {
+            if ($this->isAttributeChanged('password')) {
 
-                $this->password = \Yii::$app->getSecurity()->generatePasswordHash($this->newPassword);
+                $this->password = \Yii::$app->getSecurity()->generatePasswordHash($this->password);
             }
 
             return true;
-
         }
     }
 }
