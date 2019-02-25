@@ -14,6 +14,7 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+
     'components' => [
         'cmsKernelComponent' => [
             'class' => Stelssoft\YiiCmsCore\CmsKernelComponent::class
@@ -82,6 +83,7 @@ $config = [
     ],
 
     'params' => $params,
+
 ];
 
 if (YII_ENV_DEV) {

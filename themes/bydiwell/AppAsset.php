@@ -30,13 +30,13 @@ class AppAsset extends AssetBundle
         'js/jarallax.js',
         'js/jquery.countup.min.js',
         'js/jquery.waypoints.min.js',
-        'js/dyscrollup.min.js',
-        'js/animated-text.min.js',
-        'js/wow.js',
+        'js/dyscrollup.js',
+        'js/animated-text.js',
+        'js/wow.min.js',
         'js/imagesloaded.min.js',
         'js/jquery.filterizr.min.js',
         'js/main.js',
-
+//        'js/google-map.js',
     ];
 
     public $depends = [

@@ -7,6 +7,10 @@
  */
 
 return [
+    'My Account' => 'Профиль',
+    'Sign In' => 'Войти',
+    'Sign Up' => 'Регистрация',
+    'forgot your password' => 'забыли пароль',
     '"{attribute}" does not support operator "{operator}".' => '"{attribute}" не поддерживает оператор "{operator}".',
     'Users' => 'Пользователи',
     'User: {name}' => 'Пользователь: {name}',

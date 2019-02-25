@@ -7,7 +7,7 @@ use Yii;
 
 class LoginForm extends Model
 {
-    public $username;
+    public $email;
     public $password;
     public $rememberMe;
 
@@ -17,7 +17,7 @@ class LoginForm extends Model
     public function rules()
     {
         return [
-            [['username', 'password'], 'required'],
+            [['email', 'password'], 'required'],
             ['rememberMe', 'boolean'],
             ['password', 'validatePassword']
         ];
@@ -28,22 +28,22 @@ class LoginForm extends Model
         if ($this->hasErrors())
             return;
 
-        $user = $this->getUser($this->username);
+        $user = $this->getUser($this->email);
         if (!($user and $this->isCorrectHash($this->$attributeName, $user->password)))
             $this->addError('password', 'Incorrect username or password.');
     }
 
-    private function getUser($username)
+    private function getUser($email)
     {
         if (!$this->user)
-            $this->user = $this->fetchUser($username);
+            $this->user = $this->fetchUser($email);
 
         return $this->user;
     }
 
-    private function fetchUser($username)
+    private function fetchUser($email)
     {
-        return User::findOne(['name' => $username]);
+        return User::findOne(['email' => $email]);
     }
 
     private function isCorrectHash($plaintext, $hash)
@@ -56,7 +56,7 @@ class LoginForm extends Model
         if (!$this->validate())
             return false;
 
-        $user = $this->getUser($this->username);
+        $user = $this->getUser($this->email);
         if (!$user)
             return false;
 

@@ -2,7 +2,7 @@
 
 namespace app\modules\user\controllers;
 
-use app\models\user\LoginForm;
+use app\modules\user\models\LoginForm;
 use Yii;
 use app\modules\user\models\User;
 use app\modules\user\models\UserSearch;
@@ -128,11 +128,11 @@ class UserController extends Controller
 
     public function actionLogin()
     {
-        if (!\Yii::$app->user->isGuest)
-            return $this->goHome();
+//        if (!\Yii::$app->user->isGuest)
+//            return $this->goHome();
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) and $model->login())
+        if ($model->load(Yii::$app->request->post()) && $model->login())
             return $this->goBack();
 
         return $this->render('login', compact('model'));

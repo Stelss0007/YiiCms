@@ -39,6 +39,8 @@ class User extends ActiveRecord implements IdentityInterface
             ['email', 'email'],
             [['active'], 'string', 'max' => 4],
             [['accessToken', 'authKey'], 'string', 'max' => 100],
+            ['name', 'unique', 'targetClass' => User::class, 'message' => 'This username has already been taken.'],
+            ['email', 'unique', 'targetClass' => User::class, 'message' => 'This email address has already been taken.'],
         ];
     }
 

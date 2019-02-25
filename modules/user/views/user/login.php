@@ -2,6 +2,9 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
+?>
+
+<?php
 $form = ActiveForm::begin(['id' => 'login-form']);
 echo $form->field($model, 'username');
 echo $form->field($model, 'password')->passwordInput();
