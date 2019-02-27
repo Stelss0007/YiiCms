@@ -9,6 +9,7 @@ use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use yii\widgets\Menu;
 
 $theme = AppAsset::register($this);
 ?>
@@ -75,24 +76,46 @@ $theme = AppAsset::register($this);
                             </a>
                         </div>
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" data-hover="dropdown" data-animations="fadeInUp">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li class="active">
-                                    <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Главная</a>
-                                </li>
-                                <li><a href="/about">О Нас</a></li>
-                                <li class="dropdown">
-                                    <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Проекты <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="projects-grid-3.html">Project Grid 3</a></li>
-                                        <li><a href="projects-grid-4.html">Project Grid 4</a></li>
-                                        <li><a href="projects-title.html">Project Title</a></li>
-                                        <li><a href="projects-details.html">Project Details</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="/contact">Контакты</a>
-                                </li>
-                            </ul>
+                            <?php
+                            Menu::begin([
+//                                'brandLabel' => Yii::$app->name,
+//                                'brandUrl' => Yii::$app->homeUrl,
+//                                'options' => [
+//                                    'class' => 'navbar-inverse navbar-fixed-top',
+//                                ],
+                            ]);
+                            echo Menu::widget([
+                                'options' => ['class' => 'nav navbar-nav navbar-right'],
+                                'items' => [
+                                    ['label' => 'Главная', 'url' => ['/']],
+                                    ['label' => 'О Нас', 'url' => ['/about']],
+                                    ['label' => 'Контакты', 'url' => ['/contact']],
+                                 ],
+                                'activeCssClass'=>'active',
+                                'firstItemCssClass'=>'fist',
+                                'lastItemCssClass' =>'last',
+                            ]);
+                            //Menu::end();
+                            ?>
+
+<!--                            <ul class="nav navbar-nav navbar-right">-->
+<!--                                <li class="active">-->
+<!--                                    <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Главная</a>-->
+<!--                                </li>-->
+<!--                                <li><a href="/about">О Нас</a></li>-->
+<!--                                <li class="dropdown">-->
+<!--                                    <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Проекты <i class="fa fa-angle-down" aria-hidden="true"></i></a>-->
+<!--                                    <ul class="dropdown-menu">-->
+<!--                                        <li><a href="projects-grid-3.html">Project Grid 3</a></li>-->
+<!--                                        <li><a href="projects-grid-4.html">Project Grid 4</a></li>-->
+<!--                                        <li><a href="projects-title.html">Project Title</a></li>-->
+<!--                                        <li><a href="projects-details.html">Project Details</a></li>-->
+<!--                                    </ul>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <a href="/contact">Контакты</a>-->
+<!--                                </li>-->
+<!--                            </ul>-->
                         </div>
                     </nav>
                 </div>

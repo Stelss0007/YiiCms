@@ -6,7 +6,7 @@ use yii\widgets\ActiveForm;
 
 <?php
 $form = ActiveForm::begin(['id' => 'login-form']);
-echo $form->field($model, 'username');
+echo $form->field($model, 'email');
 echo $form->field($model, 'password')->passwordInput();
 echo $form->field($model, 'rememberMe')->checkbox();
 echo Html::submitButton(

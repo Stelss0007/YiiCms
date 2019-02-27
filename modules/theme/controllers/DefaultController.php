@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * ThemeController implements the CRUD actions for Theme model.
  */
-class ThemeController extends Controller
+class DefaultController extends Controller
 {
     /**
      * @inheritdoc

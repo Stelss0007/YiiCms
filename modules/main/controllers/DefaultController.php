@@ -3,7 +3,7 @@ namespace app\modules\main\controllers;
 
 use yii\base\Controller;
 
-class MainController extends Controller
+class DefaultController extends Controller
 {
     public function actions()
     {
