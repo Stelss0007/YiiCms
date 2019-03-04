@@ -172,6 +172,7 @@ img {
 /* Form CSS */
 .form-control {
     height: 45px;
+    /*margin-bottom: 30px;*/
     margin-bottom: 30px;
     box-shadow: none;
     -webkit-box-shadow: none;
@@ -179,7 +180,8 @@ img {
     border-radius: 0px;
     -moz-border-radius: 0px;
     -webkit-border-radius: 0px;
-31}
+}
+
 .form-control:focus {
     border-color: #999999;
     box-shadow: none;
@@ -2943,6 +2945,11 @@ input:-moz-placeholder {
 .social i:hover {
     background: #eaa546;
     color: #ffffff;
+}
+
+form .has-error .help-block {
+    margin-top: -30px;
+    margin-bottom: 0;
 }
 
 

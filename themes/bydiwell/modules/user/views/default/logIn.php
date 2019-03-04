@@ -31,8 +31,16 @@ use yii\widgets\ActiveForm;
                 <div class="tab">
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation" class="active"><a href="#Section1" role="tab" data-toggle="tab" aria-expanded="true"><?php echo Module::t('Sign In');?></a></li>
-                        <li role="presentation" class=""><a href="#Section2" role="tab" data-toggle="tab" aria-expanded="false"><?php echo Module::t('Sign Up');?></a></li>
+                        <li role="presentation" class="active">
+                            <a href="#Section1" role="tab" data-toggle="tab" aria-expanded="true">
+                                <?php echo Module::t('Sign In');?>
+                            </a>
+                        </li>
+                        <li role="presentation" class="">
+                            <a href="/user/registration">
+                                <?php echo Module::t('Sign Up');?>
+                            </a>
+                        </li>
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content tabs">
@@ -59,27 +67,7 @@ use yii\widgets\ActiveForm;
                             <?php ActiveForm::end(); ?>
                         </div>
                         <div class="tab-pane fade" id="Section2">
-                            <form class="form-horizontal">
-                                <div class="form-group">
-                                    <label>Full Name</label>
-                                    <input class="form-control" type="text">
-                                </div>
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <input class="form-control" type="email">
-                                </div>
-                                <div class="form-group">
-                                    <label>Password</label>
-                                    <input class="form-control" type="password">
-                                </div>
-                                <div class="form-group">
-                                    <label>Retype Password</label>
-                                    <input class="form-control" type="password">
-                                </div>
-                                <div class="form-group text-center">
-                                    <button type="submit" class="btn btn-default">Sign up</button>
-                                </div>
-                            </form>
+
                         </div>
                     </div>
                 </div>

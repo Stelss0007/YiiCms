@@ -2,7 +2,8 @@
 
 namespace app\modules\user\controllers;
 
-use app\modules\user\models\LoginForm;
+use app\modules\user\models\LogInForm;
+use app\modules\user\models\SignUpForm;
 use Yii;
 use app\modules\user\models\User;
 use app\modules\user\models\UserSearch;
@@ -131,11 +132,23 @@ class DefaultController extends Controller
 //        if (!\Yii::$app->user->isGuest)
 //            return $this->goHome();
 
-        $model = new LoginForm();
+        $model = new LogInForm();
         if ($model->load(Yii::$app->request->post()) && $model->login())
             return $this->goBack();
 
-        return $this->render('login', compact('model'));
+        return $this->render('logIn', compact('model'));
+    }
+
+    public function actionRegistration()
+    {
+//        if (!\Yii::$app->user->isGuest)
+//            return $this->goHome();
+
+        $model = new SignUpForm();
+        if ($model->load(Yii::$app->request->post()) && $model->signup())
+            return $this->goBack();
+
+        return $this->render('signUp', compact('model'));
     }
 
     public function actionLogout()

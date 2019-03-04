@@ -45,8 +45,8 @@ $theme = AppAsset::register($this);
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="herader-topbar-col tobar-rightside center991">
-                        <span class="after-bdr ml0-991"><a href="user/login"><?php echo \Yii::t('app', 'Sign In'); ?></a></span>
-                        <span class="after-bdr ml0-991"><a href="user/login"><?php echo \Yii::t('app', 'Sign Up'); ?></a></span>
+                        <span class="after-bdr ml0-991"><a href="/user/login"><?php echo \Yii::t('app', 'Sign In'); ?></a></span>
+                        <span class="after-bdr ml0-991"><a href="/user/registration"><?php echo \Yii::t('app', 'Sign Up'); ?></a></span>
                         <span class="ml0">
                             <span class="s-icon ml0">
                                 <a href="/" id="addClass"><span class="glyphicon glyphicon-search"></span></a>

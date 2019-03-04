@@ -35,7 +35,7 @@ class User extends ActiveRecord implements IdentityInterface
             [['updatedAt', 'createdAt', 'lastLoggedInAt', 'createdBy', 'updatedBy'], 'integer'],
             [['name', 'email', ], 'string', 'max' => 100,],
             [['password'], 'string', 'max' => 100,],
-            [['name', 'email', 'password'], 'required'],
+            [['email', 'password'], 'required'],
             ['email', 'email'],
             [['active'], 'string', 'max' => 4],
             [['accessToken', 'authKey'], 'string', 'max' => 100],
@@ -119,6 +119,7 @@ class User extends ActiveRecord implements IdentityInterface
                 $this->createdAt = time();
                 $this->password = \Yii::$app->getSecurity()->generatePasswordHash($this->password);
                 $this->authKey = \Yii::$app->security->generateRandomString();
+                $this->accessToken = \Yii::$app->security->generateRandomString();
 
                 return true;
             }
@@ -130,5 +131,23 @@ class User extends ActiveRecord implements IdentityInterface
 
             return true;
         }
+    }
+
+    /**
+     * Generates "remember me" authentication key
+     */
+    public function generateAuthKey()
+    {
+        $this->authKey = \Yii::$app->security->generateRandomString();
+    }
+
+    /**
+     * Generates password hash from password and sets it to the model
+     *
+     * @param string $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = \Yii::$app->security->generatePasswordHash($password);
     }
 }
