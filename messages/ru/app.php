@@ -8,4 +8,7 @@ return [
     'My Account' => 'Профиль',
     'Sign In' => 'Войти',
     'Sign Up' => 'Регистрация',
+    'Configuration' => 'Настройки',
+    'Save' => 'Сохранить',
+    'Changes saved successfully' => 'Измения успешно сохранены',
 ];

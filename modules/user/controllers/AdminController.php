@@ -3,17 +3,17 @@
 namespace app\modules\user\controllers;
 
 use app\modules\user\models\LogInForm;
+use Stelssoft\YiiCmsCore\CmsAdminController;
 use Yii;
 use app\modules\user\models\User;
 use app\modules\user\models\UserSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
  * UserController implements the CRUD actions for User model.
  */
-class AdminController extends Controller
+class AdminController extends CmsAdminController
 {
     /**
      * @inheritdoc

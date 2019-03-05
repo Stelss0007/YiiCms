@@ -26,6 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="x_content">
             <div class="text-right">
                 <?= Html::a(Module::t('Create Theme'), ['create'], ['class' => 'btn btn-success']) ?>
+                <?= Html::a(Module::t('Configuration'), ['configuration'], ['class' => 'btn btn-default']) ?>
             </div>
 
             <?= GridView::widget([

@@ -2,7 +2,9 @@
 namespace app\modules\main;
 
 
-class Module extends \yii\base\Module
+use Stelssoft\YiiCmsCore\CmsModule;
+
+class Module extends CmsModule
 {
 
 }

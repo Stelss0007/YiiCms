@@ -19,6 +19,7 @@ return [
     'Update User: {name}' => 'Редактирование пользователя: {name}',
     'Email' => 'Email',
     'Password' => 'Пароль',
+    'Password Repeat' => 'Подтвердите пароль',
     'Name' => 'Имя',
     'First Name' => 'Имя',
     'Last Name' => 'Фамилия',
@@ -198,4 +199,7 @@ return [
     'Your password has been changed successfully.' => 'Ваш пароль был успешно изменен.',
     'Your profile has been updated' => 'Настройки профиля были успешно сохранены',
     '{0, date, MMMM dd, YYYY HH:mm}' => '{0, date, dd MMMM, YYYY HH:mm}',
+    'This email address has already been taken.' => 'Возможно данный имейл уже есть в системе',
+    'Passwords don\'t match' => 'Пароли не совпадают',
+    'Incorrect email or password.' => 'Не корректный email или пароль',
 ];

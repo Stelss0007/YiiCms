@@ -1,9 +1,9 @@
 <?php
 namespace app\modules\main\controllers;
 
-use yii\base\Controller;
+use Stelssoft\YiiCmsCore\CmsController;
 
-class DefaultController extends Controller
+class DefaultController extends CmsController
 {
     public function actions()
     {

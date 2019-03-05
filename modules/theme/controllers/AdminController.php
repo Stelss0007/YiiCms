@@ -2,17 +2,17 @@
 
 namespace app\modules\theme\controllers;
 
+use Stelssoft\YiiCmsCore\CmsAdminController;
 use Yii;
 use app\modules\theme\models\Theme;
 use app\modules\theme\models\ThemeSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
  * ThemeController implements the CRUD actions for Theme model.
  */
-class AdminController extends Controller
+class AdminController extends CmsAdminController
 {
     /**
      * @inheritdoc

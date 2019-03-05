@@ -2,6 +2,7 @@
 
 namespace app\modules\user\models;
 
+use app\modules\user\Module;
 use yii\base\Model;
 use Yii;
 
@@ -23,6 +24,18 @@ class LogInForm extends Model
         ];
     }
 
+    /**
+     * @inheritdoc
+     */
+    public function attributeLabels()
+    {
+        return [
+            'email' => Module::t('Email'),
+            'password' => Module::t('Password'),
+            'passwordRepeat' => Module::t('Password Repeat'),
+        ];
+    }
+
     public function validatePassword($attributeName)
     {
         if ($this->hasErrors())
@@ -30,7 +43,7 @@ class LogInForm extends Model
 
         $user = $this->getUser($this->email);
         if (!($user and $this->isCorrectHash($this->$attributeName, $user->password)))
-            $this->addError('password', 'Incorrect username or password.');
+            $this->addError('password', Module::t('Incorrect email or password.'));
     }
 
     private function getUser($email)
