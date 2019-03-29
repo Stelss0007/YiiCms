@@ -53,6 +53,7 @@ class AdminController extends CmsAdminController
      */
     public function actionView($id)
     {
+        $this->getObjectName();
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
