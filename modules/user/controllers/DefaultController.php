@@ -156,4 +156,9 @@ class DefaultController extends CmsController
         Yii::$app->user->logout();
         return $this->goHome();
     }
+
+    public function actionProfile()
+    {
+        print_r(Yii::$app->user);
+    }
 }

@@ -10,6 +10,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use yii\widgets\Menu;
+use app\modules\user\Module as UserModule;
 
 $theme = AppAsset::register($this);
 ?>
@@ -45,8 +46,20 @@ $theme = AppAsset::register($this);
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="herader-topbar-col tobar-rightside center991">
-                        <span class="after-bdr ml0-991"><a href="/user/login"><?php echo \Yii::t('app', 'Sign In'); ?></a></span>
-                        <span class="after-bdr ml0-991"><a href="/user/registration"><?php echo \Yii::t('app', 'Sign Up'); ?></a></span>
+                        <?php if (Yii::$app->user->getIsGuest()): ?>
+                            <span class="after-bdr ml0-991">
+                                <a href="/user/login"><?php echo \Yii::t('app', 'Sign In'); ?></a>
+                            </span>
+                            <span class="after-bdr ml0-991">
+                                <a href="/user/registration"><?php echo \Yii::t('app', 'Sign Up'); ?></a>
+                            </span>
+                        <?php else: ?>
+                            <span class="after-bdr ml0-991">
+                                <a href="/user/profile">
+                                    <?php echo UserModule::t('My Account'); ?>
+                                </a>
+                            </span>
+                        <?php endif; ?>
                         <span class="ml0">
                             <span class="s-icon ml0">
                                 <a href="/" id="addClass"><span class="glyphicon glyphicon-search"></span></a>

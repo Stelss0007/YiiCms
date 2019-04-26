@@ -7,7 +7,7 @@
  */
 
 return [
-    'My Account' => 'Профиль',
+    'My Account' => 'Мой Профиль',
     'Sign In' => 'Войти',
     'Sign Up' => 'Регистрация',
     'forgot your password' => 'забыли пароль',
