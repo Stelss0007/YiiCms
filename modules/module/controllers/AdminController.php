@@ -2,8 +2,8 @@
 
 namespace app\modules\module\controllers;
 
-use app\modules\module\models\Module;
-use app\modules\module\models\ModuleSearch;
+use app\modules\module\models\DbModule;
+use app\modules\module\models\DbModuleSearch;
 use Stelssoft\YiiCmsCore\CmsAdminController;
 use Yii;
 use yii\web\NotFoundHttpException;
@@ -32,13 +32,13 @@ class AdminController extends CmsAdminController
      */
     public function actionIndex()
     {
-        exit();
-        $searchModel = new ModuleSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        $availableModules = DbModule::getAvailableModuleList();
+        $instaledModules = DbModule::getInstaledModuleList();
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'availableModules' => $availableModules,
+            'instaledModules' => $instaledModules,
         ]);
     }
 
@@ -60,7 +60,7 @@ class AdminController extends CmsAdminController
      */
     public function actionCreate()
     {
-        $model = new Module();
+        $model = new DbModule();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -106,7 +106,7 @@ class AdminController extends CmsAdminController
      */
     protected function findModel($id)
     {
-        if (($model = Module::findOne($id)) !== null) {
+        if (($model = DbModule::findOne($id)) !== null) {
             return $model;
         }
 

@@ -2,16 +2,14 @@
 
 namespace app\modules\module\models;
 
-use Module;
-use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\modules\theme\models\Theme;
+
 
 /**
  * ThemeSearch represents the model behind the search form of `app\modules\theme\models\Theme`.
  */
-class ModuleSearch extends Module
+class DbModuleSearch extends DbModule
 {
     /**
      * @inheritdoc
@@ -20,7 +18,7 @@ class ModuleSearch extends Module
     {
         return [
             [['id'], 'integer'],
-            [['name', 'description', 'active', 'title', 'version', 'author'], 'safe'],
+            [['name', 'description', 'active', 'version', 'author'], 'safe'],
         ];
     }
 
@@ -42,7 +40,7 @@ class ModuleSearch extends Module
      */
     public function search($params)
     {
-        $query = Module::find();
+        $query = DbModule::find();
 
         // add conditions that should always apply here
 
@@ -66,7 +64,6 @@ class ModuleSearch extends Module
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'description', $this->description])
             ->andFilterWhere(['like', 'active', $this->active])
-            ->andFilterWhere(['like', 'title', $this->title])
             ->andFilterWhere(['like', 'version', $this->version])
             ->andFilterWhere(['like', 'author', $this->author]);
 

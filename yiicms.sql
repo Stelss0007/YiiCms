@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Апр 26 2019 г., 18:15
+-- Время создания: Май 03 2019 г., 19:07
 -- Версия сервера: 5.7.25
 -- Версия PHP: 5.6.30-0+deb8u1
 
@@ -69,6 +69,8 @@ INSERT INTO `migration` (`version`, `apply_time`) VALUES
 
 CREATE TABLE `module` (
   `id` int(10) UNSIGNED NOT NULL,
+  `namespace` varchar(400) NOT NULL,
+  `systemName` varchar(400) NOT NULL,
   `name` varchar(255) NOT NULL,
   `description` varchar(400) NOT NULL,
   `version` varchar(20) NOT NULL,
@@ -153,6 +155,7 @@ ALTER TABLE `migration`
 --
 ALTER TABLE `module`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `module_namespace` (`namespace`),
   ADD KEY `active` (`active`);
 
 --
