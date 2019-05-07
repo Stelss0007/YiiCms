@@ -32,11 +32,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 <table class="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th><a href="/admin/theme/index?isAdminInterface=1&amp;sort=name" data-sort="name">Название</a></th>
-                            <th><a href="/admin/theme/index?isAdminInterface=1&amp;sort=description" data-sort="description">Описание</a></th>
-                            <th><a href="/admin/theme/index?isAdminInterface=1&amp;sort=version" data-sort="version">Версия</a></th>
-                            <th><a href="/admin/theme/index?isAdminInterface=1&amp;sort=author" data-sort="author">Автор</a></th>
-                            <th class="action-column">&nbsp;</th>
+                            <th style="width: 30%">
+                                <a href="/admin/theme/index?isAdminInterface=1&amp;sort=name" data-sort="name">Название</a>
+                            </th>
+                            <th style="width: *">
+                                <a href="/admin/theme/index?isAdminInterface=1&amp;sort=description" data-sort="description">Описание</a>
+                            </th>
+                            <th style="width: 145px" class="action-column"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,13 +46,29 @@ $this->params['breadcrumbs'][] = $this->title;
                             <tr data-key="1">
                                 <td><?php echo $module->name ?></td>
                                 <td><?php echo $module->description ?></td>
-                                <td><?php echo $module->version ?></td>
-                                <td><?php echo $module->author ?></td>
                                 <td>
                                     <div class="btn-group btn-group-sm">
-                                        <a class="btn btn-control btn-default" href="/admin/<?php echo $module->systemName ?>" title="Просмотр" aria-label="Просмотр" data-pjax="0">
-                                            <i class="fa fa-eye"></i>
+                                        <a class="btn btn-control btn-default" href="/admin/<?php echo $module->systemName ?>" title="Module Info" aria-label="Module Info" data-pjax="0">
+                                            <i class="fa fa-info-circle"></i>
                                         </a>
+                                        <?php if(isset($instaledModules[$module->systemName])): ?>
+                                            <a class="btn btn-control btn-default" href="/admin/<?php echo $module->systemName ?>" title="Go to Module" aria-label="Go to Module" data-pjax="0">
+                                                <i class="fa fa-cog"></i>
+                                            </a>
+                                            <a class="btn btn-control btn-default" href="/admin/<?php echo $module->systemName ?>" title="Uninstall" aria-label="Uninstall" data-pjax="0">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+                                            <a class="btn btn-control btn-default" href="/admin/<?php echo $module->systemName ?>" title="Deactivate" aria-label="Deactivate" data-pjax="0">
+                                                <i class="fa fa-pause"></i>
+                                            </a>
+                                            <a class="btn btn-control btn-default" href="/admin/<?php echo $module->systemName ?>" title="Activate" aria-label="Activate" data-pjax="0">
+                                                <i class="fa fa-play"></i>
+                                            </a>
+                                        <?php else: ?>
+                                            <a class="btn btn-control btn-default" href="/admin/<?php echo $module->systemName ?>" title="Install" aria-label="Install" data-pjax="0">
+                                                <i class="fa fa-download"></i>
+                                            </a>
+                                        <?php endif; ?>
                                     </div>
                                 </td>
                             </tr>

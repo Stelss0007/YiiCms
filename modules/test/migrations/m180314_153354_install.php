@@ -1,4 +1,5 @@
 <?php
+namespace app\modules\test\migrations;
 
 use yii\db\Migration;
 
@@ -8,9 +9,9 @@ use yii\db\Migration;
  * yii migrate --migrationPath=@app/modules/user/migrations
  *
  */
-class m180314_153353_install extends Migration
+class m180314_153354_install extends Migration
 {
-    private $table = 'user';
+    private $table = 'user22';
 
     public function up()
     {
@@ -46,6 +47,7 @@ class m180314_153353_install extends Migration
             'email' => 'admin@mail.com',
             'name' => 'admin',
             'authKey' => \Yii::$app->security->generateRandomString(),
+            'accessToken' => \Yii::$app->security->generateRandomString(),
             'password' => \Yii::$app->getSecurity()->generatePasswordHash('admin'),
             'group' => 1,
             'active' => 1,

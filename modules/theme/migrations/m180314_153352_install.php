@@ -7,9 +7,11 @@ use yii\db\Migration;
  */
 class m180314_153352_install extends Migration
 {
+    private $table = 'theme';
+
     public function up()
     {
-        $this->createTable('theme', [
+        $this->createTable($this->table, [
             'id' => $this->primaryKey(),
             'name' => $this->string(100)->notNull(),
             'description' => $this->text(),
@@ -25,14 +27,14 @@ class m180314_153352_install extends Migration
 
     public function down()
     {
-        $this->dropTable('theme');
+        $this->dropTable($this->table);
 
         return false;
     }
 
     private function setDefaults()
     {
-        $this->insert('theme', [
+        $this->insert($this->table, [
             'name' => 'mytheme',
             'description' => 'My Test Theme',
             'active' => 1,

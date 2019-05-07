@@ -5,7 +5,9 @@ namespace app\modules\module\controllers;
 use app\modules\module\models\DbModule;
 use app\modules\module\models\DbModuleSearch;
 use Stelssoft\YiiCmsCore\CmsAdminController;
+use Stelssoft\YiiCmsCore\CmsMigration;
 use Yii;
+use yii\helpers\VarDumper;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
@@ -40,6 +42,30 @@ class AdminController extends CmsAdminController
             'availableModules' => $availableModules,
             'instaledModules' => $instaledModules,
         ]);
+    }
+
+    public function actionInstall()
+    {
+        $request = Yii::$app->request;
+
+        $moduleName = $request->get('module');
+
+        $cmsMigration  = new CmsMigration();
+        $cmsMigration->migrateModule($moduleName);
+
+        echo 'mod=' . $moduleName;
+    }
+
+    public function actionUninstall()
+    {
+        $request = Yii::$app->request;
+
+        $moduleName = $request->get('module');
+
+        $cmsMigration  = new CmsMigration();
+        $cmsMigration->unmigrateModule($moduleName);
+
+        echo 'mod=' . $moduleName;
     }
 
     /**
