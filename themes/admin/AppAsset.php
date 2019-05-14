@@ -66,6 +66,7 @@ class AppAsset extends AssetBundle
         // bootstrap-daterangepicker
         'vendors/moment/min/moment.min.js',
         'vendors/bootstrap-daterangepicker/daterangepicker.js',
+        'vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js',
 
         // Custom Theme Scripts
         'build/js/custom.min.js',

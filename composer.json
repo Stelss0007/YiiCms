@@ -3,6 +3,8 @@
         "yiisoft/yii2": "2.0.15.1",
         "yiisoft/yii2-gii": "^2.0",
         "yiisoft/yii2-debug": "^2.0",
-        "stelssoft/yii-cms-core": "dev-master"
+        "stelssoft/yii-cms-core": "dev-master",
+        "vlucas/phpdotenv": "^3.3",
+        "yiisoft/yii2-swiftmailer": "^2.1"
     }
 }

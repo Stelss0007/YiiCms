@@ -3,31 +3,13 @@
 namespace app\modules\module\controllers;
 
 use app\modules\module\models\DbModule;
-use app\modules\module\models\DbModuleSearch;
 use Stelssoft\YiiCmsCore\CmsAdminController;
 use Stelssoft\YiiCmsCore\CmsMigration;
 use Yii;
-use yii\helpers\VarDumper;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 class AdminController extends CmsAdminController
 {
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
-
     /**
      * Lists all User models.
      * @return mixed
@@ -52,8 +34,9 @@ class AdminController extends CmsAdminController
 
         $cmsMigration  = new CmsMigration();
         $cmsMigration->migrateModule($moduleName);
+        DbModule::install($moduleName);
 
-        echo 'mod=' . $moduleName;
+        return $this->redirect(['index']);
     }
 
     public function actionUninstall()
@@ -64,8 +47,9 @@ class AdminController extends CmsAdminController
 
         $cmsMigration  = new CmsMigration();
         $cmsMigration->unmigrateModule($moduleName);
+        DbModule::uninstall($moduleName);
 
-        echo 'mod=' . $moduleName;
+        return $this->redirect(['index']);
     }
 
     /**
@@ -81,46 +65,24 @@ class AdminController extends CmsAdminController
         ]);
     }
 
-    /**
-     * @return string|\yii\web\Response
-     */
-    public function actionCreate()
+    public function actionActivate()
     {
-        $model = new DbModule();
+        $request = Yii::$app->request;
+        $moduleName = $request->get('module');
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
+        $module = DbModule::getModule($moduleName);
+        $module->actvate();
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        return $this->redirect(['index']);
     }
 
-    /**
-     * @param $id
-     * @return string|\yii\web\Response
-     */
-    public function actionUpdate($id)
+    public function actionDeactivate()
     {
-        $model = $this->findModel($id);
+        $request = Yii::$app->request;
+        $moduleName = $request->get('module');
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * @param $id
-     * @return \yii\web\Response
-     */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
+        $module = DbModule::getModule($moduleName);
+        $module->deactivate();
 
         return $this->redirect(['index']);
     }

@@ -4255,11 +4255,48 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
 /** /bootstrap-datetimepicker **/
 
 
+
 .table tr.filters td {
     padding: 2px;
 }
 
-.table tbody tr td,
+.table tbody tr td {
     padding: 2px 10px;
     vertical-align: middle;
+}
+
+.table tbody tr:hover td,
+.table tbody tr:hover th
+{
+    background-color: #ebebeb !important;
+    border-color: #D6D6D6;
+}
+
+table.table tr td.btn-col {
+    width:1%;
+    white-space:nowrap;
+}
+
+.table tbody tr td .btn {
+    border: 1px solid transparent;
+    color: #73879C;
+    background: transparent;
+}
+
+.table tbody tr:hover .btn {
+    border: 1px solid #D6D6D6;
+    background: transparent;
+}
+
+.table tbody tr:hover .btn:hover {
+    color: #0d0d0d;
+}
+
+.install-page {
+    background: #F7F7F7;
+}
+
+.install-wrapper {
+    margin: 5% auto;
+    max-width: 70%;
 }

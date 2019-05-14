@@ -38,7 +38,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <th style="width: *">
                                 <a href="/admin/theme/index?isAdminInterface=1&amp;sort=description" data-sort="description">Описание</a>
                             </th>
-                            <th style="width: 145px" class="action-column"></th>
+                            <th style="width: 150px;" class="action-column"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -46,26 +46,29 @@ $this->params['breadcrumbs'][] = $this->title;
                             <tr data-key="1">
                                 <td><?php echo $module->name ?></td>
                                 <td><?php echo $module->description ?></td>
-                                <td>
+                                <td class="btn-col1">
                                     <div class="btn-group btn-group-sm">
-                                        <a class="btn btn-control btn-default" href="/admin/<?php echo $module->systemName ?>" title="Module Info" aria-label="Module Info" data-pjax="0">
+                                        <a class="btn btn-control btn-default" href="/admin/module/<?php echo $module->systemName ?>" title="Module Info" aria-label="Module Info" data-pjax="0">
                                             <i class="fa fa-info-circle"></i>
                                         </a>
                                         <?php if(isset($instaledModules[$module->systemName])): ?>
                                             <a class="btn btn-control btn-default" href="/admin/<?php echo $module->systemName ?>" title="Go to Module" aria-label="Go to Module" data-pjax="0">
                                                 <i class="fa fa-cog"></i>
                                             </a>
-                                            <a class="btn btn-control btn-default" href="/admin/<?php echo $module->systemName ?>" title="Uninstall" aria-label="Uninstall" data-pjax="0">
+                                            <a class="btn btn-control btn-default" href="/admin/module/uninstall?module=<?php echo $module->systemName ?>" title="Uninstall" aria-label="Uninstall" data-pjax="0">
                                                 <i class="fa fa-trash"></i>
                                             </a>
-                                            <a class="btn btn-control btn-default" href="/admin/<?php echo $module->systemName ?>" title="Deactivate" aria-label="Deactivate" data-pjax="0">
-                                                <i class="fa fa-pause"></i>
-                                            </a>
-                                            <a class="btn btn-control btn-default" href="/admin/<?php echo $module->systemName ?>" title="Activate" aria-label="Activate" data-pjax="0">
-                                                <i class="fa fa-play"></i>
-                                            </a>
+                                            <?php if($instaledModules[$module->systemName]->active): ?>
+                                                <a class="btn btn-control btn-default" href="/admin/module/deactivate?module=<?php echo $module->systemName ?>" title="Deactivate" aria-label="Deactivate" data-pjax="0">
+                                                    <i class="fa fa-pause"></i>
+                                                </a>
+                                            <?php else: ?>
+                                                <a class="btn btn-control btn-default" href="/admin/module/activate?module=<?php echo $module->systemName ?>" title="Activate" aria-label="Activate" data-pjax="0">
+                                                    <i class="fa fa-play"></i>
+                                                </a>
+                                            <?php endif; ?>
                                         <?php else: ?>
-                                            <a class="btn btn-control btn-default" href="/admin/<?php echo $module->systemName ?>" title="Install" aria-label="Install" data-pjax="0">
+                                            <a class="btn btn-control btn-default" href="/admin/module/install?module=<?php echo $module->systemName ?>" title="Install" aria-label="Install" data-pjax="0">
                                                 <i class="fa fa-download"></i>
                                             </a>
                                         <?php endif; ?>

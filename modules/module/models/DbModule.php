@@ -2,9 +2,9 @@
 namespace app\modules\module\models;
 
 use app\modules\module\Module;
-use yii\db\ActiveRecord;
+use Stelssoft\YiiCmsCore\CmsActiveRecord;
 
-class DbModule extends ActiveRecord
+class DbModule extends CmsActiveRecord
 {
     /**
      * @inheritdoc
@@ -20,12 +20,11 @@ class DbModule extends ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'title'], 'string', 'max' => 100],
+            [['name'], 'string', 'max' => 100],
             [['description'], 'string', 'max' => 200],
             [['active'], 'string', 'max' => 4],
             [['version'], 'string', 'max' => 20],
             [['author'], 'string', 'max' => 60],
-            [['namespace'], 'string', 'max' => 400],
         ];
     }
 
@@ -44,22 +43,64 @@ class DbModule extends ActiveRecord
         ];
     }
 
+    public static function getModulesDirectory()
+    {
+        return \Yii::getAlias('@app') . '/modules/';
+    }
+
     public static function getAvailableModuleList()
     {
-        $modulesDirectory = \Yii::getAlias('@app') . '/modules/';
+        $modulesDirectory = self::getModulesDirectory();
         $moduleFolderList = scandir($modulesDirectory);
         $fsModules = array_diff($moduleFolderList, ['.', '..']);
         $result = [];
 
         foreach ($fsModules as $fsModule) {
-            $moduleInfo = $modulesDirectory . $fsModule . '/info.php';
-
-            if (file_exists($moduleInfo)) {
-                $result[] = self::arrayToObject(array_merge(require($moduleInfo), ['systemName' => $fsModule] ));
+            if ($module = self::getAvailableModuleInfo($fsModule)) {
+                $result[] = $module;
             }
         }
 
         return $result;
+    }
+
+    public static function getAvailableModuleInfo($systemModuleName)
+    {
+        $moduleInfoFile = sprintf('%s/%s/info.php', self::getModulesDirectory(), $systemModuleName);
+
+        if (file_exists($moduleInfoFile)) {
+            return self::arrayToObject(array_merge(require($moduleInfoFile), ['systemName' => $systemModuleName] ));
+        }
+
+        return null;
+    }
+
+    public static function install($systemModuleName)
+    {
+        $moduleInfo = self::getAvailableModuleInfo($systemModuleName);
+
+        $module = new self();
+        $module->systemName = $moduleInfo->systemName;
+        $module->name = $moduleInfo->name;
+        $module->description = $moduleInfo->description;
+        $module->version = $moduleInfo->version;
+        $module->author = $moduleInfo->author;
+        $module->active = false;
+        $module->save(false);
+    }
+
+    public static function uninstall($systemModuleName)
+    {
+        $module = self::getModule($systemModuleName);
+
+        if (null !== $module) {
+            $module->delete();
+        }
+    }
+
+    public static function getModule($systemModuleName)
+    {
+        return self::findOne(['systemName' => $systemModuleName]);
     }
 
     private static function arrayToObject(array $array)
@@ -73,6 +114,8 @@ class DbModule extends ActiveRecord
 
         return $obj;
     }
+
+
 
     public static function getInstaledModuleList()
     {

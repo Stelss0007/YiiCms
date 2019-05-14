@@ -36,8 +36,6 @@ class m180314_153353_install extends Migration
     public function down()
     {
         $this->dropTable($this->table);
-
-        return false;
     }
 
     private function setDefaults()

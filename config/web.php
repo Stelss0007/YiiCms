@@ -24,7 +24,7 @@ $config = [
 //        ],
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-            'cookieValidationKey' => 'mscnxmOcpEm4kl7bSpDjspHw6Ew_tAC0',
+            'cookieValidationKey' => env('COOKIE_VALIDATION_KEY', 'YII_COOKIE_VALIDATION_KEY'),
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -41,7 +41,15 @@ $config = [
             // send all mails to a file by default. You have to set
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
-            'useFileTransport' => true,
+            'useFileTransport' => env('MAIL_USE_FILE_TRANSPORT', true),
+            'transport' => [
+                  'class' => 'Swift_SmtpTransport',
+                  'host' => env('MAIL_HOST', 'localhost'),
+                  'username' => env('MAIL_USERNAME', 'username'),
+                  'password' => env('MAIL_PASSWORD', 'password'),
+                  'port' => env('MAIL_PORT', '587'),
+                  'encryption' => env('MAIL_ENCRYPTION', null),
+              ],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -77,8 +85,8 @@ $config = [
             'class' => 'app\modules\main\Module',
             // ... другие настройки модуля ...
         ],
-//        'theme' => [
-//            'class' => app\modules\theme\Module::class,
+//        'install' => [
+//            'class' => app\modules\install\Module::class,
 //        ],
     ],
 
