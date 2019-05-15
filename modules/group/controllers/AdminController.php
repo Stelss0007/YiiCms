@@ -1,10 +1,9 @@
 <?php
 
-namespace app\modules\user\controllers;
+namespace app\modules\group\controllers;
 
 use app\modules\user\models\LogInForm;
-use app\modules\user\models\SignUpForm;
-use Stelssoft\YiiCmsCore\CmsController;
+use Stelssoft\YiiCmsCore\CmsAdminController;
 use Yii;
 use app\modules\user\models\User;
 use app\modules\user\models\UserSearch;
@@ -14,7 +13,7 @@ use yii\filters\VerbFilter;
 /**
  * UserController implements the CRUD actions for User model.
  */
-class GroupController extends CmsController
+class AdminController extends CmsAdminController
 {
     /**
      * @inheritdoc
@@ -37,7 +36,6 @@ class GroupController extends CmsController
      */
     public function actionIndex()
     {
-        echo 'www';exit;
         $searchModel = new UserSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
@@ -55,6 +53,7 @@ class GroupController extends CmsController
      */
     public function actionView($id)
     {
+        $this->getObjectName();
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
@@ -130,36 +129,19 @@ class GroupController extends CmsController
 
     public function actionLogin()
     {
-//        if (!\Yii::$app->user->isGuest)
-//            return $this->goHome();
+        if (!\Yii::$app->user->isGuest)
+            return $this->goHome();
 
         $model = new LogInForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login())
+        if ($model->load(Yii::$app->request->post()) and $model->login())
             return $this->goBack();
 
-        return $this->render('logIn', compact('model'));
-    }
-
-    public function actionRegistration()
-    {
-//        if (!\Yii::$app->user->isGuest)
-//            return $this->goHome();
-
-        $model = new SignUpForm();
-        if ($model->load(Yii::$app->request->post()) && $model->signup())
-            return $this->goBack();
-
-        return $this->render('signUp', compact('model'));
+        return $this->render('login', compact('model'));
     }
 
     public function actionLogout()
     {
         Yii::$app->user->logout();
         return $this->goHome();
-    }
-
-    public function actionProfile()
-    {
-        print_r(Yii::$app->user);
     }
 }
