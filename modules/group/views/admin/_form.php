@@ -1,17 +1,12 @@
 <?php
 
-use app\modules\group\models\Group;
-use app\modules\user\Module;
-use yii\helpers\ArrayHelper;
+use app\modules\group\Module;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model app\modules\user\models\User */
+/* @var $model app\modules\group\models\Group */
 /* @var $form yii\widgets\ActiveForm */
-
-//\yii\helpers\VarDumper::dump(ArrayHelper::map(Group::find()->asArray()->all(),'id','name'));
-//exit;
 ?>
 
 <div class="theme-form">
@@ -19,9 +14,7 @@ use yii\widgets\ActiveForm;
     <?php $form = ActiveForm::begin(); ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
-    <?= $form->field($model, 'email')->input('email', ['maxlength' => true]) ?>
-    <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
-    <?= $form->field($model, 'group')->dropDownList(ArrayHelper::map(Group::find()->asArray()->all(),'id','name')) ?>
+    <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
     <?= $form->field($model, 'active')->dropDownList([
             '1' => Module::t('Yes'),
             '0' => Module::t('No'),

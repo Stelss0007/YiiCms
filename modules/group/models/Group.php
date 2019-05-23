@@ -11,12 +11,10 @@ use yii\web\IdentityInterface;
  *
  * @property int $id
  * @property string $name
+ * @property string $description
  * @property int $active
- * @property int $lastUpdate
- * @property string $email
- * @property int $author
  */
-class Group extends CmsActiveRecord implements IdentityInterface
+class Group extends CmsActiveRecord
 {
     /**
      * @inheritdoc
@@ -32,15 +30,9 @@ class Group extends CmsActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            [['updatedAt', 'createdAt', 'lastLoggedInAt', 'createdBy', 'updatedBy'], 'integer'],
-            [['name', 'email', ], 'string', 'max' => 100,],
-            [['password'], 'string', 'max' => 100,],
-            [['email', 'password'], 'required'],
-            ['email', 'email'],
-            [['active'], 'string', 'max' => 4],
-            [['accessToken', 'authKey'], 'string', 'max' => 100],
-            ['name', 'unique', 'targetClass' => User::class, 'message' => 'This username has already been taken.'],
-            ['email', 'unique', 'targetClass' => User::class, 'message' => 'This email address has already been taken.'],
+            [['name'], 'string', 'max' => 100,],
+            [['description'], 'string', 'max' => 200,],
+            [['active'], 'integer'],
         ];
     }
 
@@ -51,38 +43,10 @@ class Group extends CmsActiveRecord implements IdentityInterface
     {
         return [
             'id' => 'ID',
-            'email' => Module::t('Email'),
             'name' => Module::t('Name'),
-            'password' => Module::t('Password'),
+            'description' => Module::t('Description'),
             'active' => Module::t('Active'),
-            'createdAt' => \Yii::t('app', 'Created At'),
-            'updatedAt' => \Yii::t('app', 'Updated At'),
-            'lastLoggedInAt' => Module::t('Last Logged In At'),
-            'createdBy' => \Yii::t('app', 'Created By'),
-            'updatedBy' => \Yii::t('app', 'Updated By'),
         ];
-    }
-
-    /**
-     * Finds an identity by the given ID.
-     *
-     * @param string|int $id the ID to be looked for
-     * @return IdentityInterface|null the identity object that matches the given ID.
-     */
-    public static function findIdentity($id)
-    {
-        return static::findOne($id);
-    }
-
-    /**
-     * Finds an identity by the given token.
-     *
-     * @param string $token the token to be looked for
-     * @return IdentityInterface|null the identity object that matches the given token.
-     */
-    public static function findIdentityByAccessToken($token, $type = null)
-    {
-        return static::findOne(['access_token' => $token]);
     }
 
     /**
@@ -91,63 +55,5 @@ class Group extends CmsActiveRecord implements IdentityInterface
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * @return string current user auth key
-     */
-    public function getAuthKey()
-    {
-        return $this->authKey;
-    }
-
-    /**
-     * @param string $authKey
-     * @return bool if auth key is valid for current user
-     */
-    public function validateAuthKey($authKey)
-    {
-        return $this->getAuthKey() === $authKey;
-    }
-
-    public function beforeSave($insert)
-    {
-        $this->updatedAt = time();
-
-        if (parent::beforeSave($insert)) {
-            if ($this->isNewRecord) {
-                $this->createdAt = time();
-                $this->password = \Yii::$app->getSecurity()->generatePasswordHash($this->password);
-                $this->authKey = \Yii::$app->security->generateRandomString();
-                $this->accessToken = \Yii::$app->security->generateRandomString();
-
-                return true;
-            }
-
-            if ($this->isAttributeChanged('password')) {
-
-                $this->password = \Yii::$app->getSecurity()->generatePasswordHash($this->password);
-            }
-
-            return true;
-        }
-    }
-
-    /**
-     * Generates "remember me" authentication key
-     */
-    public function generateAuthKey()
-    {
-        $this->authKey = \Yii::$app->security->generateRandomString();
-    }
-
-    /**
-     * Generates password hash from password and sets it to the model
-     *
-     * @param string $password
-     */
-    public function setPassword($password)
-    {
-        $this->password = \Yii::$app->security->generatePasswordHash($password);
     }
 }

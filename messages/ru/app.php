@@ -11,4 +11,7 @@ return [
     'Configuration' => 'Настройки',
     'Save' => 'Сохранить',
     'Changes saved successfully' => 'Измения успешно сохранены',
+    'Activate' => 'Активировать',
+    'Deactivate' => 'Деактивировать',
+    'Group' => 'Группа',
 ];

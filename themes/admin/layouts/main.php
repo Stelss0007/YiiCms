@@ -73,15 +73,15 @@ AppAsset::register($this);
                             'options' => ['class' => 'side-menu'],
                             'items' => [
                                 ['label' => '<i class="fa fa-home"></i><span>Dashboard</span>', 'url' => ['/admin']],
-                                ['label' => '<i class="fa fa-users"></i><span>Groups</span>', 'url' => ['/admin/groups']],
+                                ['label' => '<i class="fa fa-users"></i><span>Groups</span>', 'url' => ['/admin/group']],
                                 ['label' => '<i class="fa fa-user"></i><span>Users</span>', 'url' => ['/admin/user']],
-                                ['label' => '<i class="fa fa-key"></i><span>Permissions</span>', 'url' => ['/admin/permissions']],
+                                ['label' => '<i class="fa fa-key"></i><span>Permissions</span>', 'url' => ['/admin/permission']],
                                 ['label' => '<i class="fa fa-list"></i><span>Menu</span>', 'url' => ['/admin/menu']],
                                 ['label' => '<i class="fa fa-database"></i><span>Modules</span>', 'url' => ['/admin/module']],
                                 ['label' => '<i class="fa fa-th"></i><span>Blocks</span>', 'url' => ['/admin/blocks']],
                                 ['label' => '<i class="fa fa-paint-brush"></i><span>Themes</span>', 'url' => ['/admin/theme']],
                                 ['label' => '<i class="fa fa-folder"></i><span>Files</span>', 'url' => ['/admin/files']],
-                                ['label' => '<i class="fa fa-file-text-o"></i><span>Articles</span>', 'url' => ['/admin/articles']],
+                                ['label' => '<i class="fa fa-file-text-o"></i><span>Articles</span>', 'url' => ['/admin/article']],
                             ],
                         ]);
                         ?>

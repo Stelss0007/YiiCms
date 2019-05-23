@@ -2,16 +2,16 @@
 
 namespace app\modules\group\controllers;
 
-use app\modules\user\models\LogInForm;
+use app\modules\user\models\User;
 use Stelssoft\YiiCmsCore\CmsAdminController;
 use Yii;
-use app\modules\user\models\User;
-use app\modules\user\models\UserSearch;
+use app\modules\group\models\Group;
+use app\modules\group\models\GroupSearch;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * UserController implements the CRUD actions for User model.
+ * GroupController implements the CRUD actions for Group model.
  */
 class AdminController extends CmsAdminController
 {
@@ -31,12 +31,12 @@ class AdminController extends CmsAdminController
     }
 
     /**
-     * Lists all User models.
+     * Lists all Group models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new UserSearch();
+        $searchModel = new GroupSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -46,7 +46,7 @@ class AdminController extends CmsAdminController
     }
 
     /**
-     * Displays a single User model.
+     * Displays a single Group model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -60,13 +60,13 @@ class AdminController extends CmsAdminController
     }
 
     /**
-     * Creates a new User model.
+     * Creates a new Group model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new User();
+        $model = new Group();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -78,7 +78,7 @@ class AdminController extends CmsAdminController
     }
 
     /**
-     * Updates an existing User model.
+     * Updates an existing Group model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -98,7 +98,7 @@ class AdminController extends CmsAdminController
     }
 
     /**
-     * Deletes an existing User model.
+     * Deletes an existing Group model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -106,42 +106,32 @@ class AdminController extends CmsAdminController
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $group = $this->findModel($id);
+
+        if(User::find()->where(['group' => $id])->count()) {
+            $this->showDanger('Can\'t remove group. Group "{name}" already have users', ['name' => $group->name]);
+            return $this->redirect(Yii::$app->request->referrer);
+        }
+
+        $group->delete();
 
         return $this->redirect(['index']);
     }
 
     /**
-     * Finds the User model based on its primary key value.
+     * Finds the Group model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return User the loaded model
+     * @return Group the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = User::findOne($id)) !== null) {
+        if (($model = Group::findOne($id)) !== null) {
             return $model;
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
-    public function actionLogin()
-    {
-        if (!\Yii::$app->user->isGuest)
-            return $this->goHome();
-
-        $model = new LogInForm();
-        if ($model->load(Yii::$app->request->post()) and $model->login())
-            return $this->goBack();
-
-        return $this->render('login', compact('model'));
-    }
-
-    public function actionLogout()
-    {
-        Yii::$app->user->logout();
-        return $this->goHome();
-    }
 }

@@ -28,7 +28,7 @@ class AppAsset extends AssetBundle
 
     public $js = [
         // jQuery
-        'vendors/jquery/dist/jquery.min.js',
+        //'vendors/jquery/dist/jquery.min.js',
         // Bootstrap
         'vendors/bootstrap/dist/js/bootstrap.min.js',
         // FastClick

@@ -37,6 +37,7 @@ class User extends ActiveRecord implements IdentityInterface
             [['password'], 'string', 'max' => 100,],
             [['email', 'password'], 'required'],
             ['email', 'email'],
+            ['group', 'integer'],
             [['active'], 'string', 'max' => 4],
             [['accessToken', 'authKey'], 'string', 'max' => 100],
             ['name', 'unique', 'targetClass' => User::class, 'message' => 'This username has already been taken.'],
@@ -60,6 +61,7 @@ class User extends ActiveRecord implements IdentityInterface
             'lastLoggedInAt' => Module::t('Last Logged In At'),
             'createdBy' => \Yii::t('app', 'Created By'),
             'updatedBy' => \Yii::t('app', 'Updated By'),
+            'group' => \Yii::t('app', 'Group'),
         ];
     }
 

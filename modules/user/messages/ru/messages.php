@@ -202,4 +202,5 @@ return [
     'This email address has already been taken.' => 'Возможно данный имейл уже есть в системе',
     'Passwords don\'t match' => 'Пароли не совпадают',
     'Incorrect email or password.' => 'Не корректный email или пароль',
+    'Group' => 'Группа',
 ];

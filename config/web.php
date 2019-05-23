@@ -76,6 +76,19 @@ $config = [
 //                ],
             ],
         ],
+
+        'assetManager' => [
+            'bundles' => [
+                'yii\web\JqueryAsset' => [
+                    'sourcePath' => null,   // do not publish the bundle
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
+                    'js' => [
+                        'js/jquery.min.js',
+                    ]
+                ],
+            ],
+        ],
     ],
 
     //Обработка модулей перенесена в CmsKernelComponent,
