@@ -22,7 +22,7 @@ class m180314_153353_install extends Migration
             'name' => $this->string(100),
             'password' => $this->string(100)->notNull(),
             'active' => $this->tinyInteger(4),
-            'group' => $this->integer(),
+            'gid' => $this->integer(),
             'accessToken' => $this->string(100)->notNull(),
             'authKey' => $this->string(100)->notNull(),
             'lastLoggedInAt' => $this->integer(),

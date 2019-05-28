@@ -2,7 +2,7 @@
 
 namespace app\modules\group\models;
 
-use app\modules\user\Module;
+use app\modules\group\Module;
 use Stelssoft\YiiCmsCore\CmsActiveRecord;
 use yii\web\IdentityInterface;
 

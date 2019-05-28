@@ -2,6 +2,7 @@
 
 namespace app\modules\user\models;
 
+use app\modules\group\models\Group;
 use app\modules\user\Module;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
@@ -37,7 +38,7 @@ class User extends ActiveRecord implements IdentityInterface
             [['password'], 'string', 'max' => 100,],
             [['email', 'password'], 'required'],
             ['email', 'email'],
-            ['group', 'integer'],
+            ['gid', 'integer'],
             [['active'], 'string', 'max' => 4],
             [['accessToken', 'authKey'], 'string', 'max' => 100],
             ['name', 'unique', 'targetClass' => User::class, 'message' => 'This username has already been taken.'],
@@ -61,7 +62,8 @@ class User extends ActiveRecord implements IdentityInterface
             'lastLoggedInAt' => Module::t('Last Logged In At'),
             'createdBy' => \Yii::t('app', 'Created By'),
             'updatedBy' => \Yii::t('app', 'Updated By'),
-            'group' => \Yii::t('app', 'Group'),
+            'gid' => \Yii::t('app', 'Group'),
+            'group.name' => \Yii::t('app', 'Group'),
         ];
     }
 
@@ -151,5 +153,13 @@ class User extends ActiveRecord implements IdentityInterface
     public function setPassword($password)
     {
         $this->password = \Yii::$app->security->generatePasswordHash($password);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGroup()
+    {
+        return $this->hasOne(Group::class, ['id' => 'gid']);
     }
 }

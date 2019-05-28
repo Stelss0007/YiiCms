@@ -19,7 +19,7 @@ class UserSearch extends User
     {
         return [
             [['id', 'updatedAt'], 'integer'],
-            [['name', 'email'], 'safe'],
+            [['name', 'email', 'group'], 'safe'],
         ];
     }
 
@@ -41,7 +41,7 @@ class UserSearch extends User
      */
     public function search($params)
     {
-        $query = User::find();
+        $query = User::find()->with('group');
 
         // add conditions that should always apply here
 
@@ -66,6 +66,7 @@ class UserSearch extends User
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'email', $this->email])
             ->andFilterWhere(['like', 'active', $this->active])
+            ->andFilterWhere(['=', 'group.name', $this->active])
         ;
 
         return $dataProvider;

@@ -34,12 +34,14 @@ class group_153355_install extends Migration
     private function setDefaults()
     {
         $this->insert($this->table, [
+            'id' => -1,
             'name' => 'Незарегистрированные',
             'description' => 'Незарегистрированные либо не авторизированные пользователи',
             'active' => 1,
         ]);
 
         $this->insert($this->table, [
+            'id' => 1,
             'name' => 'Администраторы',
             'description' => 'Администраторы сайта',
             'active' => 1,
