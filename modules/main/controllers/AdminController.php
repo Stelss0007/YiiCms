@@ -18,7 +18,7 @@ class AdminController extends CmsAdminController
      */
     public function actionIndex()
     {
-        echo 'eee';exit;
+        return $this->render('index');
     }
 
 //    /**

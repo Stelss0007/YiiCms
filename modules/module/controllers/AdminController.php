@@ -65,7 +65,7 @@ class AdminController extends CmsAdminController
         ]);
     }
 
-    public function actionActivate()
+    public function actionActivate($id)
     {
         $request = Yii::$app->request;
         $moduleName = $request->get('module');
@@ -76,7 +76,7 @@ class AdminController extends CmsAdminController
         return $this->redirect(['index']);
     }
 
-    public function actionDeactivate()
+    public function actionDeactivate($id)
     {
         $request = Yii::$app->request;
         $moduleName = $request->get('module');

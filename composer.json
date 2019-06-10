@@ -5,6 +5,10 @@
         "yiisoft/yii2-debug": "^2.0",
         "stelssoft/yii-cms-core": "dev-master",
         "vlucas/phpdotenv": "^3.3",
-        "yiisoft/yii2-swiftmailer": "^2.1"
+        "yiisoft/yii2-swiftmailer": "^2.1",
+        "twig/twig": "^2.11"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.3"
     }
 }

@@ -1,0 +1,21 @@
+<section class="about-area about-area-three">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                Theme Module Hello {{ name }}
+            </div>222
+            {{ dataGrid({
+                'dataProvider': dataProvider,
+                'filterModel': searchModel,
+                'columns': [
+                'name',
+                'description',
+                {
+                    'class': 'Stelssoft\\YiiCmsCore\\grid\\ActionColumn',
+                    'contentOptions': {'style': 'width: 160px;'}
+                },
+                ],
+            }) }}
+        </div>
+    </div>
+</section>
