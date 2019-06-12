@@ -1,6 +1,6 @@
 {# http://preview.themeforest.net/item/vobon-construction-and-business-html5-template/full_screen_preview/21753693?_ga=2.204858640.1020954997.1560244399-1583146090.1560244399 #}
 {% set theme = registerAssetBundle('app/themes/bydiwell/AppAsset', true) %}
-{{ beginPage() }}
+{% beginPage %}
 <!DOCTYPE html>
 <html lang="{{ app.language }}">
     <head>
@@ -12,7 +12,7 @@
         {{ head() }}
     </head>
     <body>
-        {{ beginBody() }}
+        {% beginBody %}
         <!-- Preloader -->
         <div id="preloader"></div>
 
@@ -190,7 +190,7 @@
                 </div>
             </div>
         </div>
-        {{ endBody() }}
+        {% endBody %}
     </body>
 </html>
-{{ endPage() }}
+{%  endPage %}

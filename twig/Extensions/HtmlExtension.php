@@ -57,4 +57,9 @@ class HtmlExtension extends AbstractExtension
 
         return \Yii::t($category, $message, $params, $language);
     }
+
+    public function getName()
+    {
+        return 'html';
+    }
 }

@@ -2,6 +2,8 @@
 
 namespace app\twig\Extensions;
 
+use app\twig\TokenParser\PageBodyTokenParser;
+use app\twig\TokenParser\PageTokenParser;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 use yii\web\View;
@@ -16,46 +18,18 @@ class ThemeExtension extends AbstractExtension
         ];
 
         return [
-            new TwigFunction('beginPage', [$this, 'beginPage'], $options),
-            new TwigFunction('endPage', [$this, 'endPage'], $options),
-            new TwigFunction('beginBody', [$this, 'beginBody'], $options),
-            new TwigFunction('endBody', [$this, 'endBody'], $options),
             new TwigFunction('head', [$this, 'head'], $options),
             new TwigFunction('registerAssetBundle', [$this, 'registerAssetBundle'], $options),
             new TwigFunction('themeAsset', [$this, 'themeAsset']),
         ];
     }
 
-    public function beginPage($context)
+    public function getTokenParsers()
     {
-        /** @var View $view */
-        $view = $context['this'];
-
-        return $view->beginPage();
-    }
-
-    public function endPage($context)
-    {
-        /** @var View $view */
-        $view = $context['this'];
-
-        return $view->endPage();
-    }
-
-    public function beginBody($context)
-    {
-        /** @var View $view */
-        $view = $context['this'];
-
-        return $view->beginBody();
-    }
-
-    public function endBody($context)
-    {
-        /** @var View $view */
-        $view = $context['this'];
-
-        $view->endBody();
+        return [
+            new PageTokenParser(),
+            new PageBodyTokenParser(),
+        ];
     }
 
     public function head($context)
@@ -93,5 +67,10 @@ class ThemeExtension extends AbstractExtension
         }
 
         return call_user_func_array($callable, $arguments);
+    }
+
+    public function getName()
+    {
+        return 'theme';
     }
 }

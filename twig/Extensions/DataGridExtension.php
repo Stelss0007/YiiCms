@@ -18,4 +18,9 @@ class DataGridExtension extends AbstractExtension
     {
         echo GridView::widget($params);
     }
+
+    public function getName()
+    {
+        return 'data_grid';
+    }
 }

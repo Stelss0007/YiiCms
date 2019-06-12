@@ -49,4 +49,9 @@ class DebugExtension extends AbstractExtension
 
         return ob_get_clean();
     }
+
+    public function getName()
+    {
+        return 'debug';
+    }
 }
