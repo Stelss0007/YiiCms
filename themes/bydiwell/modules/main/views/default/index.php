@@ -599,7 +599,7 @@ $theme = AppAsset::register($this);
             <div class="col-md-8 col-sm-8">
                 <div class="project-col">
                     <div class="hover-box">
-                        <<?= Html::img($theme->baseUrl.'/images/project/7.jpg', ['class' => 'fixed-hight280 fixed-hight210'])?>
+                        <?= Html::img($theme->baseUrl.'/images/project/7.jpg', ['class' => 'fixed-hight280 fixed-hight210'])?>
                         <div class="hover-box-content">
                             <h3>Project title</h3>
                             <ul class="icon">
