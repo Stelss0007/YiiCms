@@ -2,6 +2,8 @@
 
 namespace app\modules\theme\controllers;
 
+use DirectoryIterator;
+use FilesystemIterator;
 use Stelssoft\YiiCmsCore\CmsAdminController;
 use Yii;
 use app\modules\theme\models\Theme;
@@ -38,9 +40,14 @@ class AdminController extends CmsAdminController
         $searchModel = new ThemeSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
+        $availableThemesList = $this->getAvailableThemesList();
+
+        //dd($availableThemesList);
+
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'availableThemesList' => $availableThemesList,
         ]);
     }
 
@@ -109,6 +116,22 @@ class AdminController extends CmsAdminController
         return $this->redirect(['index']);
     }
 
+    public function actionScreenshot($theme)
+    {
+        $fileName ='screenshot.png';
+        $screenshotPath = Yii::getAlias(sprintf('@app/themes/%s/%s', $theme, $fileName));
+
+        if (!file_exists($screenshotPath)) {
+            $fileName ='screenshot.jpg';
+            $screenshotPath = Yii::getAlias(sprintf('@app/themes/admin/assets/images/%s', $fileName));
+        }
+
+        Yii::$app->response->sendFile(
+            $screenshotPath,
+            $fileName
+        );
+      }
+
     /**
      * Finds the Theme model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
@@ -123,5 +146,30 @@ class AdminController extends CmsAdminController
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    private function getAvailableThemesList()
+    {
+        $availableThemesList = [];
+        $iterator = new FilesystemIterator(Yii::getAlias('@app/themes'));
+
+        /** @var DirectoryIterator $entry */
+        foreach($iterator as $entry) {
+
+            $themeInfoFile = sprintf('%s/info.php',$entry->getPathname());
+
+            if (!file_exists($themeInfoFile)) {
+                continue;
+            }
+
+            $themeDirName = $entry->getFilename();
+            $availableThemesList[$themeDirName] = [
+                'themeDirName' => $themeDirName,
+                'themeAbsolutePath' => $entry->getPathname(),
+                'themeInfo' => require($themeInfoFile),
+            ];
+        }
+
+        return $availableThemesList;
     }
 }

@@ -4300,3 +4300,35 @@ table.table tr td.btn-col {
     margin: 5% auto;
     max-width: 70%;
 }
+
+.theme-list .thumbnail {
+    height: auto;
+}
+
+.theme-list .thumbnail .image-container {
+    max-height: 200px;
+    height: 200px;
+
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.theme-list .thumbnail .image-container img {
+    width: 100%;
+}
+
+.theme-list .modal .modal-dialog {
+    width: 80%;
+    max-width: 1200px;
+}
+
+.modal-body.theme-info {
+    padding: 40px 60px;
+}
+
+.modal-body.theme-info img {
+    max-width: 95%;
+    border: 2px solid #73879C;
+    border-radius: 4px;
+}
