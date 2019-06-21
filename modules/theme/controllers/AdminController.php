@@ -126,7 +126,10 @@ class AdminController extends CmsAdminController
             $screenshotPath = Yii::getAlias(sprintf('@app/themes/admin/assets/images/%s', $fileName));
         }
 
-        Yii::$app->response->sendFile(
+        // Set cache time
+        Yii::$app->response->getHeaders()->add('Pragma', 'cache');
+        Yii::$app->response->getHeaders()->add('Cache-Control', 'max-age=86400');
+        return Yii::$app->response->sendFile(
             $screenshotPath,
             $fileName
         );
@@ -148,6 +151,9 @@ class AdminController extends CmsAdminController
         throw new NotFoundHttpException('The requested page does not exist.');
     }
 
+    /**
+     * @return array
+     */
     private function getAvailableThemesList()
     {
         $availableThemesList = [];

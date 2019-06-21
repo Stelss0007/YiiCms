@@ -8,10 +8,10 @@ use yii\web\AssetBundle;
 class AppAsset extends AssetBundle
 {
     public $css = [
-        // Bootstrap
-        'vendors/bootstrap/dist/css/bootstrap.min.css',
         // Font Awesome
         'vendors/font-awesome/css/font-awesome.min.css',
+        // Bootstrap
+        //'vendors/bootstrap/dist/css/bootstrap.min.css',
         // NProgress
         'vendors/nprogress/nprogress.css',
         // iCheck

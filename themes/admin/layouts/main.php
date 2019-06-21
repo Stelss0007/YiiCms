@@ -15,7 +15,7 @@ use yii\helpers\Html;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 
-AppAsset::register($this);
+$theme = AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -186,7 +186,7 @@ AppAsset::register($this);
                             <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                                 <li>
                                     <a>
-                                        <span class="image"><img src="/images/avatars/avatar_1.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="<?php echo $theme->baseUrl ?>/images/avatars/avatar_1.jpg" alt="Profile Image" /></span>
                                         <span>
                           <span>John Smith</span>
                           <span class="time">3 mins ago</span>
