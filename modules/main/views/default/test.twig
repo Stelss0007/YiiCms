@@ -17,5 +17,30 @@
                 ],
             }) }}
         </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                Test Form
+            </div>222
+            {{ formBegin(testForm, {method: 'post', action: '', id: 'my-form', options: {class: 'inline'}}) }}
+                {{ formField('name', {type: 'text'}) }}
+                {{ formField('email', {type: 'email'}) }}
+                {{ formField('subject', {type: 'subject'}) }}
+                {{ formField('body', {type: 'textarea'}) }}
+                {{ formField('agree', {type: 'checkbox'}) }}
+                {{ formField('file', {type: 'file'}) }}
+                 <button type="submit">Save</button>
+            {{ formEnd() }}
+
+            {{ formBegin(testForm, {method: 'post', action: '', id: 'my-form', options: {class: 'inline'}}) }}
+                {{ formField('name', {type: 'text'}) }}
+                {{ formField('email', {type: 'email'}) }}
+                {{ formField('subject', {type: 'subject'}) }}
+                {{ formField('body', {type: 'textarea'}) }}
+                {{ formField('agree', {type: 'checkbox'}) }}
+                {{ formField('file', {type: 'file'}) }}
+                <button type="submit">Save</button>
+            {{ formEnd() }}
+        </div>
     </div>
 </section>

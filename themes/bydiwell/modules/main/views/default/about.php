@@ -32,6 +32,9 @@ $theme = AppAsset::register($this);
 <section class="about-area about-area-three">
     <div class="container">
         <div class="row">
+            <iframe id="partners-supporters" style="border: 0;" src="/proxy?url=https://go.missioncontinues.org/l/591531/2019-05-24/4hf39v" width="100%" height="500" frameborder="0"></iframe>
+        </div>
+        <div class="row">
             <div class="col-md-6">
                 <div class="about-three-col">
                     <?= Html::img($theme->baseUrl.'/images/about/2.jpg')?>

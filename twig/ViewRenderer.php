@@ -3,6 +3,7 @@ namespace app\twig;
 
 use app\twig\Extensions\DataGridExtension;
 use app\twig\Extensions\DebugExtension;
+use app\twig\Extensions\FormExtension;
 use app\twig\Extensions\HtmlExtension;
 use app\twig\Extensions\RoutingExtension;
 use app\twig\Extensions\ThemeExtension;
@@ -130,6 +131,7 @@ class ViewRenderer extends BaseViewRenderer
         $this->twig->addExtension(new ThemeExtension());
         $this->twig->addExtension(new DataGridExtension());
         $this->twig->addExtension(new RoutingExtension());
+        $this->twig->addExtension(new FormExtension());
 
         // Adding custom globals (objects or static classes)
 

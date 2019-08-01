@@ -240,8 +240,12 @@
             $("#removeClass").click(function () {
           $('#qnimate').removeClass('popup-box-on');
             });
-    })
-    
+    });
 
+
+  $('#partners-supporters').load( function() {
+    $('#partners-supporters').contents().find("head")
+      .append($("<style type='text/css'>input{background:red;}</style>"));
+  });
 
 })(window.jQuery);
