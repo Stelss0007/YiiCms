@@ -27,8 +27,6 @@ class AppAsset extends AssetBundle
     ];
 
     public $js = [
-        // jQuery
-        //'vendors/jquery/dist/jquery.min.js',
         // Bootstrap
         'vendors/bootstrap/dist/js/bootstrap.min.js',
         // FastClick
@@ -37,8 +35,7 @@ class AppAsset extends AssetBundle
         'vendors/nprogress/nprogress.js',
         // Chart.js
         'vendors/Chart.js/dist/Chart.min.js',
-        // gauge.js
-        'vendors/gauge.js/dist/gauge.min.js',
+
         // bootstrap-progressbar
         'vendors/bootstrap-progressbar/bootstrap-progressbar.min.js',
         // iCheck
@@ -63,8 +60,6 @@ class AppAsset extends AssetBundle
         'vendors/jqvmap/dist/jquery.vmap.js',
         'vendors/jqvmap/dist/maps/jquery.vmap.world.js',
         'vendors/jqvmap/examples/js/jquery.vmap.sampledata.js',
-        // bootstrap-daterangepicker
-        'vendors/moment/min/moment.min.js',
         'vendors/bootstrap-daterangepicker/daterangepicker.js',
         'vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js',
 
