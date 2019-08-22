@@ -54,8 +54,6 @@ class AppAsset extends AssetBundle
         'vendors/flot-spline/js/jquery.flot.spline.min.js',
         'vendors/flot.curvedlines/curvedLines.js',
 
-        // DateJS
-        'vendors/DateJS/build/date.js',
         // JQVMap
         'vendors/jqvmap/dist/jquery.vmap.js',
         'vendors/jqvmap/dist/maps/jquery.vmap.world.js',
