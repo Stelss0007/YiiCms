@@ -410,7 +410,7 @@ if (typeof NProgress != 'undefined') {
 		
 		
 		for (var i = 0; i < 30; i++) {
-		  chart_plot_02_data.push([new Date(Date.today().add(i).days()).getTime(), randNum() + i + i + 10]);
+		  //chart_plot_02_data.push([new Date(Date.today().add(i).days()).getTime(), randNum() + i + i + 10]);
 		}
 		
 		
@@ -458,7 +458,7 @@ if (typeof NProgress != 'undefined') {
           },
           tooltip: false
         }
-		
+
 		var chart_plot_02_settings = {
 			grid: {
 				show: true,
@@ -521,8 +521,8 @@ if (typeof NProgress != 'undefined') {
 				min: chart_plot_02_data[0][0],
 				max: chart_plot_02_data[20][0]
 			}
-		};	
-	
+		};
+
 		var chart_plot_03_settings = {
 			series: {
 				curvedLines: {
@@ -545,49 +545,49 @@ if (typeof NProgress != 'undefined') {
 				}
 			}
 		};
-        
-		
+
+
         if ($("#chart_plot_01").length){
 			console.log('Plot1');
-			
+
 			$.plot( $("#chart_plot_01"), [ arr_data1, arr_data2 ],  chart_plot_01_settings );
 		}
-		
-		
+
+
 		if ($("#chart_plot_02").length){
 			console.log('Plot2');
-			
-			$.plot( $("#chart_plot_02"), 
-			[{ 
-				label: "Email Sent", 
-				data: chart_plot_02_data, 
-				lines: { 
-					fillColor: "rgba(150, 202, 89, 0.12)" 
-				}, 
-				points: { 
-					fillColor: "#fff" } 
+
+			$.plot( $("#chart_plot_02"),
+			[{
+				label: "Email Sent",
+				data: chart_plot_02_data,
+				lines: {
+					fillColor: "rgba(150, 202, 89, 0.12)"
+				},
+				points: {
+					fillColor: "#fff" }
 			}], chart_plot_02_settings);
-			
+
 		}
-		
+
 		if ($("#chart_plot_03").length){
 			console.log('Plot3');
-			
-			
+
+
 			$.plot($("#chart_plot_03"), [{
 				label: "Registrations",
 				data: chart_plot_03_data,
 				lines: {
 					fillColor: "rgba(150, 202, 89, 0.12)"
-				}, 
+				},
 				points: {
 					fillColor: "#fff"
 				}
 			}], chart_plot_03_settings);
-			
+
 		};
-	  
-	} 
+
+	}
 	
 		
 	/* STARRR */
@@ -5005,41 +5005,39 @@ if (typeof NProgress != 'undefined') {
 	   
 	   
 	$(document).ready(function() {
-				
-		init_sparklines();
-		init_flot_chart();
-		init_sidebar();
-		init_wysiwyg();
-		init_InputMask();
-		init_JQVmap();
-		init_cropper();
-		init_knob();
-		init_IonRangeSlider();
-		init_ColorPicker();
-		init_TagsInput();
-		init_parsley();
-		init_daterangepicker();
-		init_daterangepicker_right();
-		init_daterangepicker_single_call();
-		init_daterangepicker_reservation();
-		init_SmartWizard();
-		init_EasyPieChart();
-		init_charts();
-		init_echarts();
-		init_morris_charts();
-		init_skycons();
-		init_select2();
-		init_validator();
-		init_DataTables();
-		init_chart_doughnut();
-		init_gauge();
-		init_PNotify();
-		init_starrr();
-		init_calendar();
-		init_compose();
-		init_CustomNotification();
-		init_autosize();
-		init_autocomplete();
+		// init_sparklines();
+		// init_sidebar();
+		// init_wysiwyg();
+		// init_InputMask();
+		// init_JQVmap();
+		// init_cropper();
+		// init_knob();
+		// init_IonRangeSlider();
+		// init_ColorPicker();
+		// init_TagsInput();
+		// init_parsley();
+		// init_daterangepicker();
+		// init_daterangepicker_right();
+		// init_daterangepicker_single_call();
+		// init_daterangepicker_reservation();
+		// init_SmartWizard();
+		// init_EasyPieChart();
+		// init_charts();
+		// init_echarts();
+		// init_morris_charts();
+		// init_skycons();
+		// init_select2();
+		// init_validator();
+		// init_DataTables();
+		// init_chart_doughnut();
+		// init_gauge();
+		// init_PNotify();
+		// init_starrr();
+		// init_calendar();
+		// init_compose();
+		// init_CustomNotification();
+		// init_autosize();
+		// init_autocomplete();
 				
 	});	
 	

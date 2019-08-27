@@ -62,7 +62,7 @@ class AppAsset extends AssetBundle
         'vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js',
 
         // Custom Theme Scripts
-        'build/js/custom.min.js',
+        'build/js/custom.js',
     ];
 
     public $depends = [
