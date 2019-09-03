@@ -8,6 +8,7 @@ use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 use yii\widgets\ActiveField;
 use yii\widgets\ActiveForm;
+use yii\jui\DatePicker;
 
 class FormExtension extends AbstractExtension
 {
@@ -54,33 +55,44 @@ class FormExtension extends AbstractExtension
 
         if($options) {
             if(!empty($options['type'])) {
-                switch ($options['type']) {
+                $type = $options['type'];
+                unset($options['type']);
+
+                switch ($type) {
                     case 'textarea':
-                        $field->textarea();
+                        $field->textarea($options);
                         break;
                     case 'input':
-                        $field->textInput();
+//                    case 'text':
+                        $field->textInput($options);
                         break;
                     case 'password':
-                        $field->passwordInput();
+                        $field->passwordInput($options);
                         break;
                     case 'select':
-                        $field->dropDownList($options['list']);
+                        $field->dropDownList($options['list'], $options);
                         break;
                     case 'checkbox':
-                        $field->checkbox();
+                        $field->checkbox($options);
                         break;
                     case 'checkboxList':
-                        $field->checkboxList([]);
+                        $field->checkboxList([], $options);
                         break;
                     case 'radio':
-                        $field->radio();
+                        $field->radio($options);
                         break;
                     case 'radioList':
-                        $field->radioList([]);
+                        $field->radioList([], $options);
                         break;
                     case 'file':
-                        $field->fileInput();
+                        $field->fileInput($options);
+                        break;
+                    case 'datePicker':
+                        // {clientOptions: {language: 'en', dateFormat: 'yyyy-MM-dd', class: 'form-control'}}
+                        $field->widget(DatePicker::class, $options);
+                        break;
+                    default:
+                        $field->textInput($options);
                         break;
                 }
             }

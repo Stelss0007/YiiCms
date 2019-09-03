@@ -30,22 +30,22 @@
             $firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']");
             
         //Initialize carousel 
-        $myCarousel.carousel({
-            interval: 5000,
-        });
+        // $myCarousel.carousel({
+        //     interval: 5000,
+        // });
         
         //Animate captions in first slide on page load 
         doAnimations($firstAnimatingElems);
 
         //Other slides to be animated on carousel slide event 
-        $myCarousel.on('slide.bs.carousel', function (e) {
-            var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']");
-            doAnimations($animatingElems);
-        });
+        // $myCarousel.on('slide.bs.carousel', function (e) {
+        //     var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']");
+        //     doAnimations($animatingElems);
+        // });
 
-        $myCarousel.on('mouseover', function (e) {
-             $myCarousel.carousel();
-        });
+        // $myCarousel.on('mouseover', function (e) {
+        //      $myCarousel.carousel();
+        // });
         
     })(jQuery);
 

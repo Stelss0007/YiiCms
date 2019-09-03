@@ -10,9 +10,9 @@ class AppAsset extends AssetBundle
         'css/bootstrap.min.css',
         'css/bootstrap-dropdownhover.css',
         'css/animate.min.css',
-        'css/animated-text.css',
+        //'css/animated-text.css',
         'css/font-awesome.min.css',
-        'css/font-awesome-animation.min.css',
+        //'css/font-awesome-animation.min.css',
         'css/lightbox.min.css',
         'css/owl.css',
         'css/responsive.css',
@@ -20,8 +20,8 @@ class AppAsset extends AssetBundle
     ];
 
     public $js = [
-        'js/jquery.min.js',
-        'js/bootstrap.min.js',
+//        'js/jquery.min.js',
+//        'js/bootstrap.min.js',
         'js/bootstrap-dropdownhover.min.js',
         'js/jquery-scrolltofixed-min.js',
         'js/bootstrap-datepicker.min.js',
@@ -31,7 +31,7 @@ class AppAsset extends AssetBundle
         'js/jquery.countup.min.js',
         'js/jquery.waypoints.min.js',
         'js/dyscrollup.js',
-        'js/animated-text.js',
+        //'js/animated-text.js',
         'js/wow.min.js',
         'js/imagesloaded.min.js',
         'js/jquery.filterizr.min.js',

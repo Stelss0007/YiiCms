@@ -24,12 +24,13 @@
                 Test Form434 844
             </div>
             {{ formBegin(testForm, {method: 'post', action: '', id: 'my-form', options: {class: 'inline'}}) }}
-                {{ formField('name', {type: 'text'}) }}
+                {{ formField('name', {type: 'input', 'class': 'form-control test'}) }}
                 {{ formField('email', {type: 'email'}) }}
                 {{ formField('subject', {type: 'subject'}) }}
                 {{ formField('body', {type: 'textarea'}) }}
                 {{ formField('agree', {type: 'checkbox'}) }}
                 {{ formField('file', {type: 'file'}) }}
+                {{ formField('datePicker', {type: 'datePicker', class: 'form-control', clientOptions: {language: 'ru', dateFormat: 'yyyy-MM-dd'}}) }}
                 <button type="submit">Save</button>
             {{ formEnd() }}
             Form 2
