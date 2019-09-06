@@ -2,6 +2,7 @@
 
 use app\modules\group\models\Group;
 use app\modules\user\Module;
+use Stelssoft\YiiCmsCore\widgets\DateTimePicker\DateTimePicker;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
@@ -26,6 +27,13 @@ use yii\widgets\ActiveForm;
             '1' => Module::t('Yes'),
             '0' => Module::t('No'),
     ]) ?>
+
+    <?=DateTimePicker::widget([
+        'model' => $model,
+        'attribute' => 'createdAt',
+        //'language' => 'ru',
+        //'dateFormat' => 'yyyy-MM-dd',
+    ]); ?>
 
     <div class="form-group">
         <?= Html::submitButton(\Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
