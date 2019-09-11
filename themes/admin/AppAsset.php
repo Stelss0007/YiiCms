@@ -11,13 +11,13 @@ class AppAsset extends AssetBundle
         // Font Awesome
         'vendors/font-awesome/css/font-awesome.min.css',
         // Bootstrap
-        'vendors/bootstrap/dist/css/bootstrap.min.css',
+        //'vendors/bootstrap/dist/css/bootstrap.min.css',
         // NProgress
         'vendors/nprogress/nprogress.css',
         // iCheck
         'vendors/iCheck/skins/flat/green.css',
         // bootstrap-progressbar
-        'vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css',
+        //'vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css',
         // JQVMap
         'vendors/jqvmap/dist/jqvmap.min.css',
         // bootstrap-daterangepicker
@@ -28,20 +28,20 @@ class AppAsset extends AssetBundle
 
     public $js = [
         // Bootstrap
-        'vendors/bootstrap/dist/js/bootstrap.min.js',
+        //'vendors/bootstrap/dist/js/bootstrap.min.js',
         // FastClick
-        'vendors/fastclick/lib/fastclick.js',
+        //'vendors/fastclick/lib/fastclick.js',
         // NProgress
         'vendors/nprogress/nprogress.js',
         // Chart.js
-        'vendors/Chart.js/dist/Chart.min.js',
+        //'vendors/Chart.js/dist/Chart.min.js',
 
         // bootstrap-progressbar
         'vendors/bootstrap-progressbar/bootstrap-progressbar.min.js',
         // iCheck
         'vendors/iCheck/icheck.min.js',
         // Skycons
-        'vendors/skycons/skycons.js',
+        //'vendors/skycons/skycons.js',
         // Flot
         'vendors/Flot/jquery.flot.js',
         'vendors/Flot/jquery.flot.pie.js',
@@ -55,11 +55,11 @@ class AppAsset extends AssetBundle
         'vendors/flot.curvedlines/curvedLines.js',
 
         // JQVMap
-        'vendors/jqvmap/dist/jquery.vmap.js',
-        'vendors/jqvmap/dist/maps/jquery.vmap.world.js',
-        'vendors/jqvmap/examples/js/jquery.vmap.sampledata.js',
-        'vendors/bootstrap-daterangepicker/daterangepicker.js',
-        'vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js',
+        //'vendors/jqvmap/dist/jquery.vmap.js',
+        //'vendors/jqvmap/dist/maps/jquery.vmap.world.js',
+        //'vendors/jqvmap/examples/js/jquery.vmap.sampledata.js',
+        //'vendors/bootstrap-daterangepicker/daterangepicker.js',
+        //'vendors/jQuery-Smart-Wizard/js/jquery.smartWizard.js',
 
         // Custom Theme Scripts
         'build/js/custom.js',
@@ -68,6 +68,7 @@ class AppAsset extends AssetBundle
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        'yii\bootstrap\BootstrapPluginAsset',
     ];
 
     public $publishOptions = [
